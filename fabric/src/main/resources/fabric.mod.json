@@ -23,7 +23,7 @@
       "com.teamabode.cave_enhancements.core.fabric.CaveEnhancementsFabric"
     ],
     "client": [
-      "com.teamabode.cave_enhancements.client.CaveEnhancementsFabricClient"
+      "com.teamabode.cave_enhancements.client.fabric.CaveEnhancementsFabricClient"
     ]
   },
   "mixins": [

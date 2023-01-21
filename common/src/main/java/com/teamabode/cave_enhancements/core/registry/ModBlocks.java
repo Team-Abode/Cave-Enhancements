@@ -5,10 +5,14 @@ import com.teamabode.cave_enhancements.core.platform.RegistryHelper;
 import com.teamabode.cave_enhancements.core.registry.misc.BlockProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 
 import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 
 public class ModBlocks {
 
@@ -37,7 +41,13 @@ public class ModBlocks {
     public static final Supplier<Block> SOUL_ROSE_QUARTZ_LAMP = RegistryHelper.registerBlockWithItem("soul_rose_quartz_lamp", () -> new RoseQuartzLampBlock(BlockProperties.ROSE_QUARTZ_LAMP.color(MaterialColor.COLOR_CYAN)), CreativeModeTab.TAB_DECORATIONS);
 
     public static final Supplier<Block> GLOW_SPLOTCH = RegistryHelper.registerBlock("glow_splotch", () -> new SplatBlock(BlockProperties.getDefault(Material.CLAY).color(MaterialColor.COLOR_CYAN).sound(SoundType.HONEY_BLOCK).noCollission().noOcclusion().instabreak().lightLevel(state -> 8), ModItems.GLOW_PASTE.get()));
+    public static final Supplier<Block> SPECTACLE_CANDLE = RegistryHelper.registerBlockWithItem("spectacle_candle", () -> new SpectacleCandleBlock(BlockBehaviour.Properties.copy(Blocks.CANDLE)), CreativeModeTab.TAB_DECORATIONS);
+    public static final Supplier<Block> SPECTACLE_CANDLE_CAKE = RegistryHelper.registerBlock("spectacle_candle_cake", () -> new SpectacleCandleCakeBlock(SPECTACLE_CANDLE.get(), BlockBehaviour.Properties.copy(Blocks.CAKE).lightLevel(litBlockEmission(3))));
 
     public static final Supplier<Block> LIGHTNING_ANCHOR = RegistryHelper.registerBlockWithItem("lightning_anchor", () -> new LightningAnchorBlock(BlockProperties.LIGHTNING_ANCHOR), CreativeModeTab.TAB_REDSTONE);
     public static final Supplier<Block> CHARGED_LIGHTNING_ANCHOR = RegistryHelper.registerBlockWithItem("charged_lightning_anchor", () -> new LightningAnchorBlock(BlockProperties.LIGHTNING_ANCHOR), CreativeModeTab.TAB_REDSTONE);
+
+    private static ToIntFunction<BlockState> litBlockEmission(int i) {
+        return (blockState) -> blockState.getValue(BlockStateProperties.LIT) ? i : 0;
+    }
 }

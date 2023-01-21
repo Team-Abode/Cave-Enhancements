@@ -11,6 +11,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.PrimedTnt;
+import net.minecraft.world.entity.projectile.*;
 import net.minecraft.world.entity.vehicle.AbstractMinecart;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -78,8 +79,13 @@ public class DrippingGoopBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     public void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
-        if (!entityCanSlide(entity)) return;
-
+        if (!entityCanSlide(entity)) {
+            if (entityCanBreakRope(entity)) {
+                level.destroyBlock(blockPos, true);
+                entity.discard();
+            }
+            return;
+        }
         Vec3 vec3 = entity.getDeltaMovement();
         if (vec3.y < -0.13) {
             double d = -0.05 / vec3.y;
@@ -96,10 +102,15 @@ public class DrippingGoopBlock extends Block implements SimpleWaterloggedBlock {
         }
 
         entity.resetFallDistance();
+
     }
 
     private static boolean entityCanSlide(Entity entity) {
         return entity instanceof LivingEntity || entity instanceof AbstractMinecart || entity instanceof PrimedTnt || entity instanceof Boat;
+    }
+
+    private static boolean entityCanBreakRope(Entity entity) {
+        return entity instanceof Snowball || entity instanceof ThrownEgg;
     }
 
     public void animateTick(BlockState blockState, Level level, BlockPos blockPos, RandomSource randomSource) {

@@ -12,6 +12,7 @@ public class CaveEnhancements {
     public static void init() {
         ModItems.init();
         ModBlocks.init();
+        ModBlockEntities.init();
         ModEntities.init();
         ModEffects.init();
         ModSounds.init();

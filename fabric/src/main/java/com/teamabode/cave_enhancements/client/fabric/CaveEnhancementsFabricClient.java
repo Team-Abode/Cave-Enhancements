@@ -1,4 +1,4 @@
-package com.teamabode.cave_enhancements.client;
+package com.teamabode.cave_enhancements.client.fabric;
 
 import com.teamabode.cave_enhancements.client.particle.*;
 import com.teamabode.cave_enhancements.client.renderer.HarmonicArrowRenderer;

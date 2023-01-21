@@ -2,6 +2,7 @@ package com.teamabode.cave_enhancements.core.platform.fabric;
 
 import com.teamabode.cave_enhancements.CaveEnhancements;
 import com.teamabode.cave_enhancements.common.item.DrippingGoopItem;
+import com.teamabode.cave_enhancements.core.platform.RegistryHelper;
 import com.teamabode.cave_enhancements.core.registry.misc.ItemProperties;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.minecraft.core.Registry;
@@ -18,6 +19,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BannerPattern;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import java.util.function.Supplier;
 
@@ -48,6 +51,11 @@ public class RegistryHelperImpl {
     public static <T extends EntityType<? extends Entity>>Supplier<T> registerEntityType(String id, Supplier<T> entitySupplier) {
         var entityType = Registry.register(Registry.ENTITY_TYPE, new ResourceLocation(CaveEnhancements.MODID, id), entitySupplier.get());
         return () -> entityType;
+    }
+
+    public static <T extends BlockEntityType<? extends BlockEntity>>Supplier<T> registerBlockEntityType(String id, Supplier<T> blockEntityTypeSupplier) {
+        var blockEntityType = Registry.register(Registry.BLOCK_ENTITY_TYPE, new ResourceLocation(CaveEnhancements.MODID, id), blockEntityTypeSupplier.get());
+        return () -> blockEntityType;
     }
 
     public static Supplier<BannerPattern> registerBannerPattern(String id) {

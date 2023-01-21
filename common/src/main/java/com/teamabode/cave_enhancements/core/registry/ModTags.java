@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.entity.BannerPattern;
 
 public class ModTags {
     // Banner Pattern Tags
-    public static final TagKey<BannerPattern> PATTERN_ITEM_GOOP = TagKey.create(Registry.BANNER_PATTERN_REGISTRY, new ResourceLocation(CaveEnhancements.MODID, "goop_pattern_item"));
+    public static final TagKey<BannerPattern> PATTERN_ITEM_GOOP = TagKey.create(Registry.BANNER_PATTERN_REGISTRY, new ResourceLocation(CaveEnhancements.MODID, "pattern_item_goop"));
 
     // Entity Type Tags
     public static final TagKey<EntityType<?>> GOOP_TRAP_IMMUNE = TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation(CaveEnhancements.MODID, "goop_trap_immune"));
