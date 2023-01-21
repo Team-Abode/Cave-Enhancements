@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "cave_enhancements:goop_trap"
+    },
+    "title": {
+      "translate": "advancements.underground.stuck_in_goop_trap.title"
+    },
+    "description": {
+      "translate": "advancements.underground.stuck_in_goop_trap.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "cave_enhancements:underground/spyglass_at_goop",
+  "criteria": {
+    "inside_goop_trap": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "cave_enhancements:goop_trap"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "inside_goop_trap"
+    ]
+  ],
+  "rewards": {}
+}

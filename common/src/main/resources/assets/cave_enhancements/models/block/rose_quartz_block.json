@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "cave_enhancements:block/rose_quartz_block"
+  }
+}

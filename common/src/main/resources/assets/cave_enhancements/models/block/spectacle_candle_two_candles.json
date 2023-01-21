@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_two_candles",
+  "textures": {
+    "all": "cave_enhancements:block/spectacle_candle",
+    "particle": "cave_enhancements:block/spectacle_candle"
+  }
+}

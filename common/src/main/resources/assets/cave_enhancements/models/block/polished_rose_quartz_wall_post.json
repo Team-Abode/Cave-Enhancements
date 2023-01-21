@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "wall": "cave_enhancements:block/polished_rose_quartz"
+  }
+}

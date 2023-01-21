@@ -1,0 +1,37 @@
+modLoader = "javafml"
+loaderVersion = "[43,)"
+#issueTrackerURL = ""
+license = "All rights reserved"
+
+[[mods]]
+modId = "cave_enhancements"
+version = "${version}"
+
+displayName = "Cave Enhancements"
+authors = '''
+Team Abode
+ExDrill
+Warhead51707
+OuterCloudStudio
+KekeCreations
+'''
+credits="Thanks to our other contributors; Chikorita Lover, Firch, BardinTheDwarf, & junshengxie."
+
+description = '''
+Expands upon the underground by adding in new & exciting features
+'''
+logoFile = "icon.png"
+
+[[dependencies.cave_enhancements]]
+modId = "forge"
+mandatory = true
+versionRange = "[43,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cave_enhancements]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.2,)"
+ordering = "NONE"
+side = "BOTH"

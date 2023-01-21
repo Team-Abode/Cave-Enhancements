@@ -1,0 +1,7 @@
+{
+  "parent": "cave_enhancements:block/template_receiver_powered",
+  "textures": {
+    "top": "cave_enhancements:block/redstone_receiver_passing",
+    "side": "cave_enhancements:block/redstone_receiver_side"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:base_stone_overworld",
+    "cave_enhancements:rose_quartz_block",
+    "minecraft:gravel"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "cave_enhancements:goop_trap",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "enchantments": [
+                      {
+                        "enchantment": "minecraft:silk_touch"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "cave_enhancements:goop",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": {
+                    "type": "minecraft:uniform",
+                    "min": 3,
+                    "max": 5
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

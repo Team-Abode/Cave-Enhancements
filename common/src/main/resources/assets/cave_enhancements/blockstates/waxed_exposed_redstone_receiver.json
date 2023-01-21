@@ -1,0 +1,67 @@
+{
+  "variants": {
+    "facing=north,powered=false,can_pass=false": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver",
+      "y": 180
+    },
+    "facing=north,powered=true,can_pass=false": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver_waiting",
+      "y": 180
+    },
+    "facing=north,powered=true,can_pass=true": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver_passing",
+      "y": 180
+    },
+    "facing=north,powered=false,can_pass=true": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver",
+      "y": 180
+    },
+
+    "facing=east,powered=false,can_pass=false": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver",
+      "y": 270
+    },
+    "facing=east,powered=true,can_pass=false": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver_waiting",
+      "y": 270
+    },
+    "facing=east,powered=true,can_pass=true": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver_passing",
+      "y": 270
+    },
+    "facing=east,powered=false,can_pass=true": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver",
+      "y": 270
+    },
+
+    "facing=south,powered=false,can_pass=false": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver"
+    },
+    "facing=south,powered=true,can_pass=false": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver_waiting"
+    },
+    "facing=south,powered=true,can_pass=true": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver_passing"
+    },
+    "facing=south,powered=false,can_pass=true": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver"
+    },
+
+    "facing=west,powered=false,can_pass=false": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver",
+      "y": 90
+    },
+    "facing=west,powered=true,can_pass=false": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver_waiting",
+      "y": 90
+    },
+    "facing=west,powered=true,can_pass=true": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver_passing",
+      "y": 90
+    },
+    "facing=west,powered=false,can_pass=true": {
+      "model": "cave_enhancements:block/exposed_redstone_receiver",
+      "y": 90
+    }
+  }
+}

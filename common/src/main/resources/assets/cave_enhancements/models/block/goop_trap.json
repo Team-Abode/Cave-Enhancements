@@ -1,0 +1,31 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"particle": "cave_enhancements:block/goop_trap_top",
+		"0": "cave_enhancements:block/goop_trap_top",
+		"1": "cave_enhancements:block/goop_trap_side"
+	},
+	"elements": [
+		{
+			"name": "bb_main",
+			"from": [0, 0, 0],
+			"to": [16, 4, 16],
+			"faces": {
+				"north": {"uv": [0, 12, 16, 16], "texture": "#1"},
+				"east": {"uv": [0, 12, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 12, 16, 16], "texture": "#1"},
+				"west": {"uv": [0, 12, 16, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "bb_main",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

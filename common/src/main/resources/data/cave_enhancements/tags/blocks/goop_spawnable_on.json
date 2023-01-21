@@ -1,0 +1,7 @@
+{
+    "replace": false,
+    "values": [
+        "cave_enhancements:goop_block",
+        "#minecraft:base_stone_overworld"
+    ]
+}

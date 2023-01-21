@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "cave_enhancements:block/polished_rose_quartz",
+    "top": "cave_enhancements:block/polished_rose_quartz",
+    "side": "cave_enhancements:block/polished_rose_quartz"
+  }
+}

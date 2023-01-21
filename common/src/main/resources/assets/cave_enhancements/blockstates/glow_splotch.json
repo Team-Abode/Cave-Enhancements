@@ -1,0 +1,150 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "up": "true"
+      },
+      "apply": {
+        "model": "cave_enhancements:block/glow_splotch",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "cave_enhancements:block/glow_splotch",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "cave_enhancements:block/glow_splotch"
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "cave_enhancements:block/glow_splotch"
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "cave_enhancements:block/glow_splotch",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "cave_enhancements:block/glow_splotch",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "cave_enhancements:block/glow_splotch",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "cave_enhancements:block/glow_splotch",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "cave_enhancements:block/glow_splotch",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "cave_enhancements:block/glow_splotch",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": "true"
+      },
+      "apply": {
+        "model": "cave_enhancements:block/glow_splotch",
+        "x": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "cave_enhancements:block/glow_splotch",
+        "x": 90,
+        "uvlock": true
+      }
+    }
+  ]
+}

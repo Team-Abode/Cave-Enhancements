@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "hatch=0": { "model": "cave_enhancements:block/dripstone_tortoise_egg" },
+    "hatch=1": { "model": "cave_enhancements:block/dripstone_tortoise_egg_slightly_cracked" },
+    "hatch=2": { "model": "cave_enhancements:block/dripstone_tortoise_egg_very_cracked" }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "cave_enhancements:goop_block",
+    "cave_enhancements:goop_splat",
+    "cave_enhancements:goop_trap",
+    "cave_enhancements:dripping_goop",
+    "cave_enhancements:volatile_goop"
+  ]
+}

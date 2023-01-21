@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:stone"
+    },
+    "title": {
+      "translate": "advancements.underground.root.title"
+    },
+    "description": {
+      "translate": "advancements.underground.root.description"
+    },
+    "background": "minecraft:textures/block/deepslate.png",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "player_obtains_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:raw_iron",
+              "minecraft:raw_gold",
+              "minecraft:raw_copper"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "player_obtains_ore"
+    ]
+  ]
+}

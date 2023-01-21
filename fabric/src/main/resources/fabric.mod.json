@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "cave_enhancements",
+  "version": "${version}",
+  "name": "Cave Enhancements",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Team Abode",
+    "ExDrill",
+    "Warhead51707",
+    "OuterCloudStudio",
+    "KekeCreations"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+  "license": "",
+  "icon": "assets/cave_enhancements/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.teamabode.cave_enhancements.core.fabric.CaveEnhancementsFabric"
+    ],
+    "client": [
+      "com.teamabode.cave_enhancements.client.CaveEnhancementsFabricClient"
+    ]
+  },
+  "mixins": [
+    "cave_enhancements.mixins.json",
+    "cave_enhancements-common.mixins.json"
+  ],
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.19.2"
+  }
+}

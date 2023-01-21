@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "cave_enhancements:lightning_anchor",
+    "cave_enhancements:charged_lightning_anchor",
+    "cave_enhancements:rose_quartz_block",
+    "cave_enhancements:jagged_rose_quartz",
+    "cave_enhancements:polished_rose_quartz",
+    "cave_enhancements:polished_rose_quartz_slab",
+    "cave_enhancements:polished_rose_quartz_stairs",
+    "cave_enhancements:polished_rose_quartz_wall",
+    "cave_enhancements:rose_quartz_tiles",
+    "cave_enhancements:rose_quartz_tile_slab",
+    "cave_enhancements:rose_quartz_tile_stairs",
+    "cave_enhancements:rose_quartz_tile_wall",
+    "cave_enhancements:rose_quartz_chimes",
+    "cave_enhancements:rose_quartz_lamp",
+    "cave_enhancements:soul_rose_quartz_lamp"
+  ]
+}

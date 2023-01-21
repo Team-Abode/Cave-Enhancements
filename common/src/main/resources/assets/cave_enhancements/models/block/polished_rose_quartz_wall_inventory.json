@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "cave_enhancements:block/polished_rose_quartz"
+  }
+}

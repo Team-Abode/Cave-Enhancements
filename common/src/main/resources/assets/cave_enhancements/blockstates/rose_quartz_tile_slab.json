@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cave_enhancements:block/rose_quartz_tile_slab"
+    },
+    "type=double": {
+      "model": "cave_enhancements:block/rose_quartz_tiles"
+    },
+    "type=top": {
+      "model": "cave_enhancements:block/rose_quartz_tile_slab_top"
+    }
+  }
+}

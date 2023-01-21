@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "cave_enhancements:glow_paste"
+    },
+    "title": {
+      "translate": "advancements.underground.place_glow_paste.title"
+    },
+    "description": {
+      "translate": "advancements.underground.place_glow_paste.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "cave_enhancements:underground/root",
+  "criteria": {
+    "glow_splotch": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "cave_enhancements:glow_splotch"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "glow_splotch"
+    ]
+  ]
+}

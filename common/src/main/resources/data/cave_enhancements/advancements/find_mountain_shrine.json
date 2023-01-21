@@ -1,0 +1,41 @@
+{
+  "display": {
+    "icon": {
+      "item": "cave_enhancements:lightning_anchor"
+    },
+    "title": {
+      "translate": "advancements.adventure.find_mountain_shrine.title"
+    },
+    "description": {
+      "translate": "advancements.adventure.find_mountain_shrine.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "minecraft:adventure/play_jukebox_in_meadows",
+  "criteria": {
+    "in_mountain_shrine": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "cave_enhancements:mountain_shrine"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "in_mountain_shrine"
+    ]
+  ]
+}

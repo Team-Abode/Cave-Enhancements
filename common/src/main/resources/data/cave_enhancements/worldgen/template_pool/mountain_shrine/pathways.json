@@ -1,0 +1,24 @@
+{
+  "name": "cave_enhancements/mountain_shrine/pathways",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "cave_enhancements:mountain_shrine/pathways/pathway_long",
+        "processors": "cave_enhancements:mountain_shrine",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "cave_enhancements:mountain_shrine/pathways/pathway_short",
+        "processors": "cave_enhancements:mountain_shrine",
+        "projection": "terrain_matching"
+      }
+    }
+  ]
+}

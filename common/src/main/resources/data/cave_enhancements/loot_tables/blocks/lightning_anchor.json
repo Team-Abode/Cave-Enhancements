@@ -1,0 +1,13 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "cave_enhancements:lightning_anchor"
+        }
+      ]
+    }
+  ]
+}

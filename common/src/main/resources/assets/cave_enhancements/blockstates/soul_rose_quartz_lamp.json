@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "cave_enhancements:block/soul_rose_quartz_lamp",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "cave_enhancements:block/soul_rose_quartz_lamp",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "cave_enhancements:block/soul_rose_quartz_lamp",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "cave_enhancements:block/soul_rose_quartz_lamp",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "cave_enhancements:block/soul_rose_quartz_lamp"
+    },
+    "facing=west": {
+      "model": "cave_enhancements:block/soul_rose_quartz_lamp",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

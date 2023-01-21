@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "cave_enhancements:volatile_goop",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 8.0,
+              "add": false
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:damage_source_properties",
+              "predicate": {
+                "source_entity": {
+                  "type": "minecraft:frog"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

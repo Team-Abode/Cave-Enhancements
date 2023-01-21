@@ -1,0 +1,49 @@
+{
+  "display": {
+    "icon": {
+      "item": "cave_enhancements:goop"
+    },
+    "title": {
+      "translate": "advancements.underground.spyglass_at_goop.title"
+    },
+    "description": {
+      "translate": "advancements.underground.spyglass_at_goop.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "cave_enhancements:underground/root",
+  "criteria": {
+    "spyglass_at_goop": {
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:spyglass"
+          ]
+        },
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "player",
+                "looking_at": {
+                  "type": "cave_enhancements:goop"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:using_item"
+    }
+  },
+  "requirements": [
+    [
+      "spyglass_at_goop"
+    ]
+  ]
+}

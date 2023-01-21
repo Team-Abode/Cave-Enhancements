@@ -1,0 +1,15 @@
+{
+  "name": "cave_enhancements:mountain_shrine/start_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "cave_enhancements:mountain_shrine/shrine",
+        "processors": "cave_enhancements:mountain_shrine",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    }
+  ]
+}

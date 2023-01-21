@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:diamond_ores",
+    "minecraft:diamond_block",
+    "minecraft:ancient_debris",
+    "minecraft:netherite_block",
+    "minecraft:iron_block",
+    "minecraft:obsidian",
+    "minecraft:crying_obsidian"
+  ]
+}

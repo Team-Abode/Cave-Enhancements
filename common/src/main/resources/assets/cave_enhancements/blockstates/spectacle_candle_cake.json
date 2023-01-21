@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "cave_enhancements:block/spectacle_candle_cake"
+    },
+    "lit=true": {
+      "model": "cave_enhancements:block/spectacle_candle_cake_lit"
+    }
+  }
+}

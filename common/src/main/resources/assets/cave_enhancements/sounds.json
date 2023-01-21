@@ -1,0 +1,313 @@
+{
+  "item.glow_paste.place": {
+    "sounds": [
+      "cave_enhancements:item/glow_paste/place"
+    ],
+    "category": "block",
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "item.amethyst_flute.use": {
+    "sounds": [
+        "cave_enhancements:item/amethyst_flute/use"
+    ],
+    "category": "player",
+    "subtitle": "subtitles.item.amethyst_flute.use"
+  },
+  "item.goop.throw": {
+    "sounds": [
+        "cave_enhancements:item/goop/throw1",
+        "cave_enhancements:item/goop/throw2"
+    ],
+    "category": "player",
+    "subtitle": "subtitles.item.goop.throw"
+  },
+  "item.glow_berry_juice.drink": {
+    "sounds": [
+        "cave_enhancements:item/glow_berry_juice/drink1",
+        "cave_enhancements:item/glow_berry_juice/drink2",
+        "cave_enhancements:item/glow_berry_juice/drink3"
+    ],
+    "category": "player",
+    "subtitle": "subtitles.item.honey_bottle.drink"
+  },
+  "block.rose_quartz_chimes.chime": {
+    "sounds": [
+        "cave_enhancements:block/rose_quartz_chimes/chime"
+    ],
+    "category": "block",
+    "subtitle": "subtitles.block.rose_quartz_chimes.chime"
+  },
+  "effect.reversal.reverse": {
+    "sounds": [
+        "cave_enhancements:effect/reversal/reverse"
+    ],
+    "subtitle": "subtitles.effect.reversal.reverse"
+  },
+  "block.goop_block.break": {
+    "sounds": [
+      "cave_enhancements:block/goop_block/break1",
+      "cave_enhancements:block/goop_block/break2",
+      "cave_enhancements:block/goop_block/break3",
+      "cave_enhancements:block/goop_block/break4"
+    ],
+    "category": "block",
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.goop_block.step": {
+    "sounds": [
+      "cave_enhancements:block/goop_block/step1",
+      "cave_enhancements:block/goop_block/step2",
+      "cave_enhancements:block/goop_block/step3",
+      "cave_enhancements:block/goop_block/step4"
+    ],
+    "category": "block",
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.goop_block.hit": {
+    "sounds": [
+      "cave_enhancements:block/goop_block/step1",
+      "cave_enhancements:block/goop_block/step2",
+      "cave_enhancements:block/goop_block/step3",
+      "cave_enhancements:block/goop_block/step4"
+    ],
+    "category": "block",
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.goop_block.fall": {
+    "sounds": [
+      "cave_enhancements:block/goop_block/step1",
+      "cave_enhancements:block/goop_block/step2",
+      "cave_enhancements:block/goop_block/step3",
+      "cave_enhancements:block/goop_block/step4"
+    ],
+    "category": "block",
+    "subtitle": "block.goop_block.fall"
+  },
+  "block.goop_block.place": {
+    "sounds": [
+      "cave_enhancements:block/goop_block/break1",
+      "cave_enhancements:block/goop_block/break2",
+      "cave_enhancements:block/goop_block/break3",
+      "cave_enhancements:block/goop_block/break4"
+    ],
+    "category": "block",
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.goop_block.slide": {
+    "sounds": [
+      "cave_enhancements:block/goop_block/slide1",
+      "cave_enhancements:block/goop_block/slide2"
+    ],
+    "category": "block",
+    "subtitle": "subtitles.block.goop_block.slide"
+  },
+  "block.goop_decoration.break": {
+    "sounds": [
+      "cave_enhancements:block/goop_block/step1",
+      "cave_enhancements:block/goop_block/step2",
+      "cave_enhancements:block/goop_block/step3",
+      "cave_enhancements:block/goop_block/step4"
+    ],
+    "category": "block",
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.goop_decoration.step": {
+    "sounds": [
+      "cave_enhancements:block/goop_block/step1",
+      "cave_enhancements:block/goop_block/step2",
+      "cave_enhancements:block/goop_block/step3",
+      "cave_enhancements:block/goop_block/step4"
+    ],
+    "category": "block",
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.goop_decoration.hit": {
+    "sounds": [
+      "cave_enhancements:block/goop_block/step1",
+      "cave_enhancements:block/goop_block/step2",
+      "cave_enhancements:block/goop_block/step3",
+      "cave_enhancements:block/goop_block/step4"
+    ],
+    "category": "block",
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.goop_decoration.fall": {
+    "sounds": [
+      "cave_enhancements:block/goop_block/step1",
+      "cave_enhancements:block/goop_block/step2",
+      "cave_enhancements:block/goop_block/step3",
+      "cave_enhancements:block/goop_block/step4"
+    ],
+    "category": "block",
+    "subtitle": "subtitles.block.generic.big_fall"
+  },
+  "block.goop_decoration.place": {
+    "sounds": [
+      "cave_enhancements:block/goop_block/step1",
+      "cave_enhancements:block/goop_block/step2",
+      "cave_enhancements:block/goop_block/step3",
+      "cave_enhancements:block/goop_block/step4"
+    ],
+    "category": "block",
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "entity.goop.hurt": {
+    "sounds": [
+      "cave_enhancements:block/goop_block/step1",
+      "cave_enhancements:block/goop_block/step2",
+      "cave_enhancements:block/goop_block/step3",
+      "cave_enhancements:block/goop_block/step4"
+    ],
+    "category": "hostile",
+    "subtitle": "subtitles.entity.goop.hurt"
+  },
+  "entity.goop.death": {
+    "sounds": [
+      "cave_enhancements:block/goop_block/break1",
+      "cave_enhancements:block/goop_block/break2",
+      "cave_enhancements:block/goop_block/break3",
+      "cave_enhancements:block/goop_block/break4"
+    ],
+    "category": "hostile",
+    "subtitle": "subtitles.entity.goop.death"
+  },
+  "item.bucket.fill.goop": {
+      "sounds": [
+        "cave_enhancements:item/bucket/fill_goop"
+      ],
+      "category": "block",
+      "subtitle": "subtitles.item.bucket.fill_goop"
+  },
+  "item.bucket.empty.goop": {
+      "sounds": [
+        "cave_enhancements:item/bucket/empty_goop"
+      ],
+      "category": "block",
+      "subtitle": "subtitles.item.bucket.empty"
+  },
+  "entity.dripstone_tortoise.hurt": {
+    "sounds": [
+      "cave_enhancements:mob/dripstone_tortoise/hurt1",
+      "cave_enhancements:mob/dripstone_tortoise/hurt2",
+      "cave_enhancements:mob/dripstone_tortoise/hurt3",
+      "cave_enhancements:mob/dripstone_tortoise/hurt4"
+    ],
+    "category": "neutral",
+    "subtitle": "subtitles.entity.dripstone_tortoise.hurt"
+  },
+  "entity.dripstone_tortoise.death": {
+    "sounds": [
+      "cave_enhancements:mob/dripstone_tortoise/death1",
+      "cave_enhancements:mob/dripstone_tortoise/death2",
+      "cave_enhancements:mob/dripstone_tortoise/death3"
+    ],
+    "category": "neutral",
+    "subtitle": "subtitles.entity.dripstone_tortoise.death"
+  },
+  "entity.dripstone_tortoise.step": {
+    "sounds": [
+      "cave_enhancements:mob/dripstone_tortoise/step1",
+      "cave_enhancements:mob/dripstone_tortoise/step2",
+      "cave_enhancements:mob/dripstone_tortoise/step3"
+    ],
+    "category": "neutral",
+    "subtitle": "subtitles.entity.dripstone_tortoise.step"
+  },
+  "entity.dripstone_tortoise.idle": {
+    "sounds": [
+      "cave_enhancements:mob/dripstone_tortoise/idle1",
+      "cave_enhancements:mob/dripstone_tortoise/idle2",
+      "cave_enhancements:mob/dripstone_tortoise/idle3"
+    ],
+    "category": "neutral",
+    "subtitle": "subtitles.entity.dripstone_tortoise.idle"
+  },
+  "entity.dripstone_tortoise.baby_hurt": {
+    "sounds": [
+      "minecraft:mob/turtle/baby/hurt1",
+      "minecraft:mob/turtle/baby/hurt2"
+    ],
+    "category": "neutral",
+    "subtitle": "subtitles.entity.dripstone_tortoise.baby_hurt"
+  },
+  "entity.dripstone_tortoise.baby_death": {
+    "sounds": [
+      "minecraft:mob/turtle/baby/death1",
+      "minecraft:mob/turtle/baby/death2"
+    ],
+    "category": "neutral",
+    "subtitle": "subtitles.entity.dripstone_tortoise.baby_death"
+  },
+  "entity.dripstone_tortoise.crack_egg": {
+    "sounds": [
+      "minecraft:mob/turtle/egg/egg_crack1",
+      "minecraft:mob/turtle/egg/egg_crack2"
+    ],
+    "category": "neutral",
+    "subtitle": "subtitles.entity.dripstone_tortoise.crack_egg"
+  },
+  "entity.dripstone_tortoise.break_egg": {
+    "sounds": [
+      "minecraft:mob/turtle/egg/egg_break1",
+      "minecraft:mob/turtle/egg/egg_break2"
+    ],
+    "category": "neutral",
+    "subtitle": "subtitles.entity.dripstone_tortoise.break_egg"
+  },
+  "entity.dripstone_tortoise.hatch_egg": {
+    "sounds": [
+      "minecraft:mob/turtle/baby/egg_hatched1",
+      "minecraft:mob/turtle/baby/egg_hatched2",
+      "minecraft:mob/turtle/baby/egg_hatched3"
+    ],
+    "category": "neutral",
+    "subtitle": "subtitles.entity.dripstone_tortoise.hatch_egg"
+  },
+  "entity.cruncher.idle": {
+    "sounds": [
+      "cave_enhancements:mob/cruncher/say1",
+      "cave_enhancements:mob/cruncher/say2",
+      "cave_enhancements:mob/cruncher/say3"
+    ],
+    "category": "neutral",
+    "subtitle": "subtitles.entity.cruncher.idle"
+  },
+  "entity.cruncher.hurt": {
+    "sounds": [
+      "cave_enhancements:mob/cruncher/hurt1",
+      "cave_enhancements:mob/cruncher/hurt2"
+    ],
+    "category": "neutral",
+    "subtitle": "subtitles.entity.cruncher.hurt"
+  },
+  "entity.cruncher.step": {
+    "sounds": [
+      "cave_enhancements:mob/cruncher/step1",
+      "cave_enhancements:mob/cruncher/step2",
+      "cave_enhancements:mob/cruncher/step3",
+      "cave_enhancements:mob/cruncher/step4",
+      "cave_enhancements:mob/cruncher/step5"
+    ],
+    "category": "neutral",
+    "subtitle": "subtitles.entity.cruncher.step"
+  },
+  "entity.cruncher.death": {
+    "sounds": [
+      "cave_enhancements:mob/cruncher/death"
+    ],
+    "category": "neutral",
+    "subtitle": "subtitles.entity.cruncher.death"
+  },
+  "music.biome.goop_caves": {
+    "sounds": [
+        "cave_enhancements:music/melt"
+    ],
+    "category": "music"
+  },
+  "music.biome.rose_quartz_caves": {
+    "sounds": [
+        "cave_enhancements:music/limulidae"
+    ],
+    "category": "music"
+  }
+}

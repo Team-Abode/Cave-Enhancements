@@ -1,0 +1,59 @@
+{
+  "display": {
+    "icon": {
+      "item": "cave_enhancements:jagged_rose_quartz"
+    },
+    "title": {
+      "translate": "advancements.underground.collect_rose_quartz.title"
+    },
+    "description": {
+      "translate": "advancements.underground.collect_rose_quartz.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "cave_enhancements:underground/root",
+  "criteria": {
+    "rose_quartz": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cave_enhancements:rose_quartz"
+            ]
+          }
+        ]
+      }
+    },
+    "jagged_rose_quartz": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cave_enhancements:jagged_rose_quartz"
+            ]
+          }
+        ]
+      }
+    },
+    "rose_quartz_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cave_enhancements:rose_quartz_block"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["rose_quartz", "jagged_rose_quartz", "rose_quartz_block"]
+  ]
+}
