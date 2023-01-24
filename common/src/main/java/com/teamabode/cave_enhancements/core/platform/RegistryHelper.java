@@ -1,5 +1,6 @@
 package com.teamabode.cave_enhancements.core.platform;
 
+import com.teamabode.cave_enhancements.common.block.DrippingGoopBlock;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
@@ -7,8 +8,10 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BannerPattern;
@@ -25,6 +28,11 @@ public class RegistryHelper {
     }
 
     @ExpectPlatform
+    public static Supplier<SpawnEggItem> registerSpawnEgg(String mobName, EntityType<? extends Mob> entityType, int baseColor, int overlayColor) {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
     public static <T extends Block>Supplier<T> registerBlock(String id, Supplier<T> blockSupplier) {
         throw new AssertionError();
     }
@@ -35,7 +43,7 @@ public class RegistryHelper {
     }
 
     @ExpectPlatform
-    public static <T extends Block>Supplier<T> registerDrippingGoop(Supplier<T> blockSupplier) {
+    public static Supplier<DrippingGoopBlock> registerDrippingGoop() {
         throw new AssertionError();
     }
 

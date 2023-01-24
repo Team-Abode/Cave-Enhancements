@@ -10,10 +10,11 @@ public class CaveEnhancements {
     public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 
     public static void init() {
-        ModItems.init();
-        ModBlocks.init();
-        ModBlockEntities.init();
         ModEntities.init();
+        ModBlocks.init();
+        ModItems.init();
+
+        ModBlockEntities.init();
         ModEffects.init();
         ModSounds.init();
         ModParticles.init();

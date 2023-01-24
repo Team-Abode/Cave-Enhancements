@@ -15,9 +15,10 @@ public class CaveEnhancementsForge {
 
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        RegistryHelperImpl.ITEMS.register(eventBus);
         RegistryHelperImpl.BLOCKS.register(eventBus);
         RegistryHelperImpl.ENTITY_TYPES.register(eventBus);
+        RegistryHelperImpl.ITEMS.register(eventBus);
+        RegistryHelperImpl.BLOCK_ENTITY_TYPES.register(eventBus);
         RegistryHelperImpl.BANNER_PATTERNS.register(eventBus);
         RegistryHelperImpl.BIOMES.register(eventBus);
         RegistryHelperImpl.MOB_EFFECTS.register(eventBus);

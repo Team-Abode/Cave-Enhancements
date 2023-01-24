@@ -13,14 +13,17 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BannerPattern;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -41,6 +44,10 @@ public class RegistryHelperImpl {
         return ITEMS.register(id, itemSupplier);
     }
 
+    public static Supplier<SpawnEggItem> registerSpawnEgg(String mobName, EntityType<? extends Mob> entityType, int baseColor, int overlayColor) {
+        return ITEMS.register(mobName + "_spawn_egg", () -> new ForgeSpawnEggItem(() -> entityType, baseColor, overlayColor, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    }
+
     public static <T extends Block>Supplier<T> registerBlock(String id, Supplier<T> blockSupplier) {
         return BLOCKS.register(id, blockSupplier);
     }
@@ -51,8 +58,8 @@ public class RegistryHelperImpl {
         return block;
     }
 
-    public static <T extends Block>Supplier<T> registerDrippingGoop(Supplier<T> blockSupplier) {
-        var block = BLOCKS.register("dripping_goop", blockSupplier);
+    public static Supplier<DrippingGoopBlock> registerDrippingGoop() {
+        var block = BLOCKS.register("dripping_goop", () -> new DrippingGoopBlock(BlockProperties.goop(true).lightLevel(state -> 2)));
         ITEMS.register("dripping_goop", () -> new DrippingGoopItem(block.get(), ItemProperties.DEFAULT.tab(CreativeModeTab.TAB_DECORATIONS)));
         return block;
     }
@@ -84,4 +91,6 @@ public class RegistryHelperImpl {
     public static Supplier<SimpleParticleType> registerParticle(String id) {
         return PARTICLE_TYPES.register(id, () -> new SimpleParticleType(false));
     }
+
+
 }

@@ -1,6 +1,8 @@
 package com.teamabode.cave_enhancements.client.fabric;
 
+import com.teamabode.cave_enhancements.client.model.GoopModel;
 import com.teamabode.cave_enhancements.client.particle.*;
+import com.teamabode.cave_enhancements.client.renderer.GoopRenderer;
 import com.teamabode.cave_enhancements.client.renderer.HarmonicArrowRenderer;
 import com.teamabode.cave_enhancements.core.registry.ModBlocks;
 import com.teamabode.cave_enhancements.core.registry.ModEntities;
@@ -8,6 +10,7 @@ import com.teamabode.cave_enhancements.core.registry.ModParticles;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.particle.HugeExplosionParticle;
 import net.minecraft.client.renderer.RenderType;
@@ -35,16 +38,21 @@ public class CaveEnhancementsFabricClient implements ClientModInitializer {
     }
 
     public static void registerRenderers() {
+        EntityRendererRegistry.register(ModEntities.GOOP.get(), GoopRenderer::new);
+        EntityRendererRegistry.register(ModEntities.GOOP_DRIP.get(), ThrownItemRenderer::new);
         EntityRendererRegistry.register(ModEntities.THROWN_GOOP.get(), ThrownItemRenderer::new);
         EntityRendererRegistry.register(ModEntities.HARMONIC_ARROW.get(), HarmonicArrowRenderer::new);
+
     }
 
     public static void registerModelLayer() {
+        EntityModelLayerRegistry.registerModelLayer(GoopModel.ENTITY_MODEL_LAYER, GoopModel::createLayer);
     }
 
     public static void registerBlockRenderLayers() {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GOOP_SPLAT.get(), RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DRIPPING_GOOP.get(), RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GLOW_SPLOTCH.get(), RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.JAGGED_ROSE_QUARTZ.get(), RenderType.cutout());
     }
 }
