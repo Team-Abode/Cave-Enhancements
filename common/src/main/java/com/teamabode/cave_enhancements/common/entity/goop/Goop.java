@@ -18,14 +18,13 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.SpawnGroupData;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.animal.frog.Frog;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
@@ -96,6 +95,12 @@ public class Goop extends Monster {
 
     public void setDripCooldown(int value) {
         entityData.set(DRIP_COOLDOWN, value);
+    }
+
+    public boolean hurt(DamageSource damageSource, float amount) {
+        if (damageSource.getDirectEntity() instanceof Snowball) this.setHanging(false);
+        if (damageSource.getDirectEntity() instanceof Frog) amount+=10;
+        return super.hurt(damageSource, amount);
     }
 
     @Nullable
