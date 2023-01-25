@@ -2,14 +2,17 @@ package com.teamabode.cave_enhancements.client.fabric;
 
 import com.teamabode.cave_enhancements.client.model.GoopModel;
 import com.teamabode.cave_enhancements.client.particle.*;
-import com.teamabode.cave_enhancements.client.renderer.GoopRenderer;
-import com.teamabode.cave_enhancements.client.renderer.HarmonicArrowRenderer;
+import com.teamabode.cave_enhancements.client.renderer.block.RoseQuartzChimesRenderer;
+import com.teamabode.cave_enhancements.client.renderer.entity.GoopRenderer;
+import com.teamabode.cave_enhancements.client.renderer.entity.HarmonicArrowRenderer;
+import com.teamabode.cave_enhancements.core.registry.ModBlockEntities;
 import com.teamabode.cave_enhancements.core.registry.ModBlocks;
 import com.teamabode.cave_enhancements.core.registry.ModEntities;
 import com.teamabode.cave_enhancements.core.registry.ModParticles;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.particle.HugeExplosionParticle;
@@ -43,10 +46,12 @@ public class CaveEnhancementsFabricClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.THROWN_GOOP.get(), ThrownItemRenderer::new);
         EntityRendererRegistry.register(ModEntities.HARMONIC_ARROW.get(), HarmonicArrowRenderer::new);
 
+        BlockEntityRendererRegistry.register(ModBlockEntities.ROSE_QUARTZ_CHIMES.get(), RoseQuartzChimesRenderer::new);
     }
 
     public static void registerModelLayer() {
         EntityModelLayerRegistry.registerModelLayer(GoopModel.ENTITY_MODEL_LAYER, GoopModel::createLayer);
+        EntityModelLayerRegistry.registerModelLayer(RoseQuartzChimesRenderer.MODEL_LAYER, RoseQuartzChimesRenderer::createLayer);
     }
 
     public static void registerBlockRenderLayers() {

@@ -1,4 +1,4 @@
-package com.teamabode.cave_enhancements.client.renderer;
+package com.teamabode.cave_enhancements.client.renderer.entity;
 
 import com.teamabode.cave_enhancements.CaveEnhancements;
 import com.teamabode.cave_enhancements.client.model.GoopModel;
