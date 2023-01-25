@@ -20,6 +20,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BannerPattern;
@@ -80,6 +81,11 @@ public class RegistryHelperImpl {
     public static Supplier<MobEffect> registerEffect(String id, Supplier<MobEffect> mobEffectSupplier) {
         var mobEffect = Registry.register(Registry.MOB_EFFECT, new ResourceLocation(CaveEnhancements.MODID, id), mobEffectSupplier.get());
         return () -> mobEffect;
+    }
+
+    public static Supplier<Potion> registerPotion(String id, Supplier<Potion> potionSupplier) {
+        var potion = Registry.register(Registry.POTION, new ResourceLocation(CaveEnhancements.MODID, id), potionSupplier.get());
+        return () -> potion;
     }
 
     public static Supplier<SoundEvent> registerSoundEvent(String id) {

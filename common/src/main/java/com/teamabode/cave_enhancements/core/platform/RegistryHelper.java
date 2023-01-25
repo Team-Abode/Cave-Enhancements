@@ -12,6 +12,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BannerPattern;
@@ -69,6 +70,11 @@ public class RegistryHelper {
 
     @ExpectPlatform
     public static Supplier<MobEffect> registerEffect(String id, Supplier<MobEffect> mobEffectSupplier) {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
+    public static Supplier<Potion> registerPotion(String id, Supplier<Potion> potionSupplier) {
         throw new AssertionError();
     }
 

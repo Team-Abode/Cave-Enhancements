@@ -10,6 +10,7 @@ public class CaveEnhancementsFabric implements ModInitializer {
 
     public void onInitialize() {
         CaveEnhancements.init();
+        CaveEnhancements.queuedWork();
 
         FabricDefaultAttributeRegistry.register(ModEntities.GOOP.get(), Goop.createGoopAttributes());
     }
