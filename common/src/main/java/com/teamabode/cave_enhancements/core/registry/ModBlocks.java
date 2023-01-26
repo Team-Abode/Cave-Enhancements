@@ -20,7 +20,7 @@ public class ModBlocks {
 
     public static final Supplier<Block> GOOP_BLOCK = RegistryHelper.registerBlockWithItem("goop_block", () -> new Block(BlockProperties.goop(false).destroyTime(0.5F).jumpFactor(0.9F)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final Supplier<Block> GOOP_TRAP = RegistryHelper.registerBlockWithItem("goop_trap", () -> new GoopTrapBlock(BlockProperties.goop(false).destroyTime(2.0F).speedFactor(0.1F)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final Supplier<Block> GOOP_SPLAT = RegistryHelper.registerBlock("goop_splat", () -> new SplatBlock(BlockProperties.goop(true), ModItems.GOOP.get()));
+    public static final Supplier<Block> GOOP_SPLAT = RegistryHelper.registerBlock("goop_splat", () -> new SplatBlock(BlockProperties.goop(true), ModItems.GOOP));
     public static final Supplier<DrippingGoopBlock> DRIPPING_GOOP = RegistryHelper.registerDrippingGoop();
     public static final Supplier<Block> VOLATILE_GOOP = RegistryHelper.registerBlockWithItem("volatile_goop", () -> new VolatileGoopBlock(BlockProperties.goop(false).destroyTime(2.0F)), CreativeModeTab.TAB_REDSTONE);
 
@@ -41,7 +41,7 @@ public class ModBlocks {
     public static final Supplier<Block> SOUL_ROSE_QUARTZ_LAMP = RegistryHelper.registerBlockWithItem("soul_rose_quartz_lamp", () -> new RoseQuartzLampBlock(BlockProperties.ROSE_QUARTZ_LAMP.color(MaterialColor.COLOR_CYAN)), CreativeModeTab.TAB_DECORATIONS);
     public static final Supplier<Block> ROSE_QUARTZ_CHIMES = RegistryHelper.registerBlockWithItem("rose_quartz_chimes", () -> new RoseQuartzChimesBlock(BlockProperties.getDefault(Material.STONE).destroyTime(2.0F).sound(SoundType.CHAIN)), CreativeModeTab.TAB_DECORATIONS);
 
-    public static final Supplier<Block> GLOW_SPLOTCH = RegistryHelper.registerBlock("glow_splotch", () -> new SplatBlock(BlockProperties.getDefault(Material.CLAY).color(MaterialColor.COLOR_CYAN).sound(SoundType.HONEY_BLOCK).noCollission().noOcclusion().instabreak().lightLevel(state -> 8), ModItems.GLOW_PASTE.get()));
+    public static final Supplier<Block> GLOW_SPLOTCH = RegistryHelper.registerBlock("glow_splotch", () -> new SplatBlock(BlockProperties.getDefault(Material.CLAY).color(MaterialColor.COLOR_CYAN).sound(SoundType.HONEY_BLOCK).noCollission().noOcclusion().instabreak().lightLevel(state -> 8), ModItems.GLOW_PASTE));
     public static final Supplier<Block> SPECTACLE_CANDLE = RegistryHelper.registerBlockWithItem("spectacle_candle", () -> new SpectacleCandleBlock(BlockBehaviour.Properties.copy(Blocks.CANDLE)), CreativeModeTab.TAB_DECORATIONS);
     public static final Supplier<Block> SPECTACLE_CANDLE_CAKE = RegistryHelper.registerBlock("spectacle_candle_cake", () -> new SpectacleCandleCakeBlock(SPECTACLE_CANDLE.get(), BlockBehaviour.Properties.copy(Blocks.CAKE).lightLevel(litBlockEmission(3))));
 

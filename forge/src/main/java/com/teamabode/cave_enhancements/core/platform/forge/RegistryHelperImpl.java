@@ -99,6 +99,4 @@ public class RegistryHelperImpl {
     public static Supplier<SimpleParticleType> registerParticle(String id) {
         return PARTICLE_TYPES.register(id, () -> new SimpleParticleType(false));
     }
-
-
 }

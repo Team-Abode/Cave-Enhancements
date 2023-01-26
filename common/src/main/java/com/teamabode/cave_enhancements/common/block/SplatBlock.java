@@ -3,7 +3,6 @@ package com.teamabode.cave_enhancements.common.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.MultifaceBlock;
@@ -18,21 +17,22 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.PushReaction;
 
 import javax.annotation.Nullable;
+import java.util.function.Supplier;
 
 @SuppressWarnings("deprecation")
 public class SplatBlock extends MultifaceBlock implements SimpleWaterloggedBlock {
     private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private final MultifaceSpreader spreader = new MultifaceSpreader(this);
-    private final Item asItem;
+    private final Supplier<Item> asItemSupplier;
 
-    public SplatBlock(Properties properties, Item asItem) {
+    public SplatBlock(Properties properties, Supplier<Item> asItemSupplier) {
         super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
-        this.asItem = asItem;
+        this.asItemSupplier = asItemSupplier;
     }
 
     public Item asItem() {
-        return asItem;
+        return asItemSupplier.get();
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
