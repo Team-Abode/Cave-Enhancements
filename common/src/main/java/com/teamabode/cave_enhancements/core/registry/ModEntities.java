@@ -2,6 +2,7 @@ package com.teamabode.cave_enhancements.core.registry;
 
 import com.teamabode.cave_enhancements.CaveEnhancements;
 import com.teamabode.cave_enhancements.common.entity.HarmonicArrow;
+import com.teamabode.cave_enhancements.common.entity.cruncher.Cruncher;
 import com.teamabode.cave_enhancements.common.entity.goop.GoopDrip;
 import com.teamabode.cave_enhancements.common.entity.goop.Goop;
 import com.teamabode.cave_enhancements.common.entity.goop.ThrownGoop;
@@ -19,6 +20,12 @@ public class ModEntities {
                     .clientTrackingRange(10)
                     .build(dataFixer("goop"))
     );
+
+    public static final Supplier<EntityType<Cruncher>> CRUNCHER = RegistryHelper.registerEntityType("cruncher", () ->
+            EntityType.Builder.of(Cruncher::new, MobCategory.CREATURE)
+                    .sized(0.8F, 0.8F)
+                    .clientTrackingRange(10)
+                    .build(dataFixer("cruncher")));
 
     public static final Supplier<EntityType<ThrownGoop>> THROWN_GOOP = RegistryHelper.registerEntityType("thrown_goop", () ->
             EntityType.Builder.<ThrownGoop>of(ThrownGoop::new, MobCategory.MISC)

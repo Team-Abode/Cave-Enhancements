@@ -1,8 +1,12 @@
 package com.teamabode.cave_enhancements.core.forge;
 
 import com.teamabode.cave_enhancements.CaveEnhancements;
+import com.teamabode.cave_enhancements.common.entity.cruncher.Cruncher;
+import com.teamabode.cave_enhancements.common.entity.goop.Goop;
 import com.teamabode.cave_enhancements.core.platform.forge.RegistryHelperImpl;
+import com.teamabode.cave_enhancements.core.registry.ModEntities;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -28,11 +32,17 @@ public class CaveEnhancementsForge {
         RegistryHelperImpl.BANNER_PATTERNS.register(eventBus);
 
         eventBus.addListener(this::commonSetup);
+        eventBus.addListener(this::registerEntityAttributes);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(CaveEnhancements::queuedWork);
+    }
+
+    private void registerEntityAttributes(EntityAttributeCreationEvent event) {
+        event.put(ModEntities.GOOP.get(), Goop.createGoopAttributes().build());
+        event.put(ModEntities.CRUNCHER.get(), Cruncher.createCruncherAttributes().build());
     }
 }
