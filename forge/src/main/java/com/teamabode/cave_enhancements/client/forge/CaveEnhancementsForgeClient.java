@@ -44,7 +44,7 @@ public class CaveEnhancementsForgeClient {
         event.registerEntityRenderer(ModEntities.THROWN_GOOP.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(ModEntities.GOOP_DRIP.get(), ThrownItemRenderer::new);
 
-        //event.registerBlockEntityRenderer(ModBlockEntities.ROSE_QUARTZ_CHIMES.get(), RoseQuartzChimesRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.ROSE_QUARTZ_CHIMES.get(), RoseQuartzChimesRenderer::new);
     }
 
     @SubscribeEvent
