@@ -2,6 +2,7 @@ package com.teamabode.cave_enhancements.core.forge;
 
 import com.teamabode.cave_enhancements.CaveEnhancements;
 import com.teamabode.cave_enhancements.common.entity.cruncher.Cruncher;
+import com.teamabode.cave_enhancements.common.entity.dripstone_tortoise.DripstoneTortoise;
 import com.teamabode.cave_enhancements.common.entity.goop.Goop;
 import com.teamabode.cave_enhancements.core.platform.forge.RegistryHelperImpl;
 import com.teamabode.cave_enhancements.core.registry.ModEntities;
@@ -44,5 +45,6 @@ public class CaveEnhancementsForge {
     private void registerEntityAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.GOOP.get(), Goop.createGoopAttributes().build());
         event.put(ModEntities.CRUNCHER.get(), Cruncher.createCruncherAttributes().build());
+        event.put(ModEntities.DRIPSTONE_TORTOISE.get(), DripstoneTortoise.createDripstoneTortoiseAttributes().build());
     }
 }

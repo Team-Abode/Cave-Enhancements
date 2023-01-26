@@ -1,12 +1,12 @@
 package com.teamabode.cave_enhancements.client.fabric;
 
 import com.teamabode.cave_enhancements.client.model.CruncherModel;
+import com.teamabode.cave_enhancements.client.model.DripstonePikeModel;
+import com.teamabode.cave_enhancements.client.model.DripstoneTortoiseModel;
 import com.teamabode.cave_enhancements.client.model.GoopModel;
 import com.teamabode.cave_enhancements.client.particle.*;
 import com.teamabode.cave_enhancements.client.renderer.block.RoseQuartzChimesRenderer;
-import com.teamabode.cave_enhancements.client.renderer.entity.CruncherRenderer;
-import com.teamabode.cave_enhancements.client.renderer.entity.GoopRenderer;
-import com.teamabode.cave_enhancements.client.renderer.entity.HarmonicArrowRenderer;
+import com.teamabode.cave_enhancements.client.renderer.entity.*;
 import com.teamabode.cave_enhancements.core.registry.ModBlockEntities;
 import com.teamabode.cave_enhancements.core.registry.ModBlocks;
 import com.teamabode.cave_enhancements.core.registry.ModEntities;
@@ -45,8 +45,10 @@ public class CaveEnhancementsFabricClient implements ClientModInitializer {
     public static void registerRenderers() {
         EntityRendererRegistry.register(ModEntities.GOOP.get(), GoopRenderer::new);
         EntityRendererRegistry.register(ModEntities.CRUNCHER.get(), CruncherRenderer::new);
+        EntityRendererRegistry.register(ModEntities.DRIPSTONE_TORTOISE.get(), DripstoneTortoiseRenderer::new);
         EntityRendererRegistry.register(ModEntities.GOOP_DRIP.get(), ThrownItemRenderer::new);
         EntityRendererRegistry.register(ModEntities.THROWN_GOOP.get(), ThrownItemRenderer::new);
+        EntityRendererRegistry.register(ModEntities.DRIPSTONE_PIKE.get(), DripstonePikeRenderer::new);
         EntityRendererRegistry.register(ModEntities.HARMONIC_ARROW.get(), HarmonicArrowRenderer::new);
 
         BlockEntityRendererRegistry.register(ModBlockEntities.ROSE_QUARTZ_CHIMES.get(), RoseQuartzChimesRenderer::new);
@@ -55,6 +57,8 @@ public class CaveEnhancementsFabricClient implements ClientModInitializer {
     public static void registerModelLayer() {
         EntityModelLayerRegistry.registerModelLayer(GoopModel.ENTITY_MODEL_LAYER, GoopModel::createLayer);
         EntityModelLayerRegistry.registerModelLayer(CruncherModel.LAYER_LOCATION, CruncherModel::createBodyLayer);
+        EntityModelLayerRegistry.registerModelLayer(DripstoneTortoiseModel.LAYER_LOCATION, DripstoneTortoiseModel::createBodyLayer);
+        EntityModelLayerRegistry.registerModelLayer(DripstonePikeModel.LAYER_LOCATION, DripstonePikeModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(RoseQuartzChimesRenderer.MODEL_LAYER, RoseQuartzChimesRenderer::createLayer);
     }
 

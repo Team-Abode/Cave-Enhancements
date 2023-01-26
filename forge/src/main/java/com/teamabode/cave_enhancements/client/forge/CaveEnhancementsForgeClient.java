@@ -2,13 +2,12 @@ package com.teamabode.cave_enhancements.client.forge;
 
 import com.teamabode.cave_enhancements.CaveEnhancements;
 import com.teamabode.cave_enhancements.client.model.CruncherModel;
+import com.teamabode.cave_enhancements.client.model.DripstonePikeModel;
+import com.teamabode.cave_enhancements.client.model.DripstoneTortoiseModel;
 import com.teamabode.cave_enhancements.client.model.GoopModel;
 import com.teamabode.cave_enhancements.client.particle.*;
 import com.teamabode.cave_enhancements.client.renderer.block.RoseQuartzChimesRenderer;
-import com.teamabode.cave_enhancements.client.renderer.entity.CruncherRenderer;
-import com.teamabode.cave_enhancements.client.renderer.entity.GoopRenderer;
-import com.teamabode.cave_enhancements.client.renderer.entity.HarmonicArrowRenderer;
-import com.teamabode.cave_enhancements.common.entity.goop.Goop;
+import com.teamabode.cave_enhancements.client.renderer.entity.*;
 import com.teamabode.cave_enhancements.core.registry.ModBlockEntities;
 import com.teamabode.cave_enhancements.core.registry.ModBlocks;
 import com.teamabode.cave_enhancements.core.registry.ModEntities;
@@ -28,6 +27,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class CaveEnhancementsForgeClient {
 
     @SubscribeEvent
+    @SuppressWarnings("all")
     public static void clientSetup(FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GOOP_SPLAT.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DRIPPING_GOOP.get(), RenderType.cutout());
@@ -40,9 +40,11 @@ public class CaveEnhancementsForgeClient {
     public static void registerEntityRenderers(final EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.GOOP.get(), GoopRenderer::new);
         event.registerEntityRenderer(ModEntities.CRUNCHER.get(), CruncherRenderer::new);
+        event.registerEntityRenderer(ModEntities.DRIPSTONE_TORTOISE.get(), DripstoneTortoiseRenderer::new);
         event.registerEntityRenderer(ModEntities.HARMONIC_ARROW.get(), HarmonicArrowRenderer::new);
         event.registerEntityRenderer(ModEntities.THROWN_GOOP.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(ModEntities.GOOP_DRIP.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(ModEntities.DRIPSTONE_PIKE.get(), DripstonePikeRenderer::new);
 
         event.registerBlockEntityRenderer(ModBlockEntities.ROSE_QUARTZ_CHIMES.get(), RoseQuartzChimesRenderer::new);
     }
@@ -51,6 +53,8 @@ public class CaveEnhancementsForgeClient {
     public static void registerModelLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(GoopModel.ENTITY_MODEL_LAYER, GoopModel::createLayer);
         event.registerLayerDefinition(CruncherModel.LAYER_LOCATION, CruncherModel::createBodyLayer);
+        event.registerLayerDefinition(DripstoneTortoiseModel.LAYER_LOCATION, DripstoneTortoiseModel::createBodyLayer);
+        event.registerLayerDefinition(DripstonePikeModel.LAYER_LOCATION, DripstonePikeModel::getTexturedModelData);
 
         event.registerLayerDefinition(RoseQuartzChimesRenderer.MODEL_LAYER, RoseQuartzChimesRenderer::createLayer);
     }

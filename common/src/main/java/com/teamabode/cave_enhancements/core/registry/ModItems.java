@@ -26,6 +26,7 @@ public class ModItems {
 
     public static final Supplier<SpawnEggItem> GOOP_SPAWN_EGG = RegistryHelper.registerSpawnEgg("goop", ModEntities.GOOP, 13946012, 11637089);
     public static final Supplier<SpawnEggItem> CRUNCHER_SPAWN_EGG = RegistryHelper.registerSpawnEgg("cruncher", ModEntities.CRUNCHER, 11127234, 5757312);
+    public static final Supplier<SpawnEggItem> DRIPSTONE_TORTOISE_SPAWN_EGG = RegistryHelper.registerSpawnEgg("dripstone_tortoise", ModEntities.DRIPSTONE_TORTOISE, 8156236, 6967114);
 
     public static void init() {
 

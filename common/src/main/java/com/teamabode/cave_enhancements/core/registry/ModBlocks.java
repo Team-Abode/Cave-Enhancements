@@ -48,6 +48,8 @@ public class ModBlocks {
     public static final Supplier<Block> LIGHTNING_ANCHOR = RegistryHelper.registerBlockWithItem("lightning_anchor", () -> new LightningAnchorBlock(BlockProperties.LIGHTNING_ANCHOR), CreativeModeTab.TAB_REDSTONE);
     public static final Supplier<Block> CHARGED_LIGHTNING_ANCHOR = RegistryHelper.registerBlockWithItem("charged_lightning_anchor", () -> new LightningAnchorBlock(BlockProperties.LIGHTNING_ANCHOR), CreativeModeTab.TAB_REDSTONE);
 
+    public static final Supplier<Block> DRIPSTONE_TORTOISE_EGG = RegistryHelper.registerBlockWithItem("dripstone_tortoise_egg", () -> new DripstoneTortoiseEggBlock(BlockBehaviour.Properties.copy(Blocks.TURTLE_EGG)), CreativeModeTab.TAB_MISC);
+
     private static ToIntFunction<BlockState> litBlockEmission(int i) {
         return (blockState) -> blockState.getValue(BlockStateProperties.LIT) ? i : 0;
     }

@@ -128,7 +128,7 @@ public class Goop extends Monster {
             if (this.tickCount % 40 == 0) {
                 List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class,
                         new AABB(this.getX(), this.getY(), this.getZ(), this.getX(), this.getY() - 20, this.getZ()),
-                        LivingEntity::canBeSeenAsEnemy
+                        livingEntity -> livingEntity.canBeSeenAsEnemy() && !(livingEntity instanceof Goop)
                 );
                 if (!list.isEmpty())
                     this.drip(false);
