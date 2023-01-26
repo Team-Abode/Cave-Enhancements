@@ -44,12 +44,16 @@ public class RegistryHelperImpl {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, CaveEnhancements.MODID);
     public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, CaveEnhancements.MODID);
 
+    public static <T extends Entity>Supplier<EntityType<T>> registerEntityType(String id, Supplier<EntityType<T>> entitySupplier) {
+        return ENTITY_TYPES.register(id, entitySupplier);
+    }
+
     public static <T extends Item> Supplier<T> registerItem(String id, Supplier<T> itemSupplier) {
         return ITEMS.register(id, itemSupplier);
     }
 
-    public static Supplier<SpawnEggItem> registerSpawnEgg(String mobName, EntityType<? extends Mob> entityType, int baseColor, int overlayColor) {
-        return ITEMS.register(mobName + "_spawn_egg", () -> new ForgeSpawnEggItem(() -> entityType, baseColor, overlayColor, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static <T extends Mob> Supplier<SpawnEggItem> registerSpawnEgg(String mobName, Supplier<EntityType<T>> entityType, int baseColor, int overlayColor) {
+        return ITEMS.register(mobName + "_spawn_egg", () -> new ForgeSpawnEggItem(entityType, baseColor, overlayColor, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     }
 
     public static <T extends Block>Supplier<T> registerBlock(String id, Supplier<T> blockSupplier) {
@@ -68,11 +72,7 @@ public class RegistryHelperImpl {
         return block;
     }
 
-    public static <T extends EntityType<? extends Entity>>Supplier<T> registerEntityType(String id, Supplier<T> entitySupplier) {
-        return ENTITY_TYPES.register(id, entitySupplier);
-    }
-
-    public static <T extends BlockEntityType<? extends BlockEntity>>Supplier<T> registerBlockEntityType(String id, Supplier<T> blockEntityTypeSupplier) {
+    public static <T extends BlockEntity>Supplier<BlockEntityType<T>> registerBlockEntityType(String id, Supplier<BlockEntityType<T>> blockEntityTypeSupplier) {
         return BLOCK_ENTITY_TYPES.register(id, blockEntityTypeSupplier);
     }
 

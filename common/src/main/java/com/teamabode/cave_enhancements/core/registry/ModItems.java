@@ -24,8 +24,8 @@ public class ModItems {
 
     public static final Supplier<Item> GOOP_DRIP = RegistryHelper.registerItem("big_goop_drip", () -> new Item(new Item.Properties()));
 
-    public static final Supplier<SpawnEggItem> GOOP_SPAWN_EGG = RegistryHelper.registerSpawnEgg("goop", ModEntities.GOOP.get(), 13946012, 11637089);
-    public static final Supplier<SpawnEggItem> CRUNCHER_SPAWN_EGG = RegistryHelper.registerSpawnEgg("cruncher", ModEntities.CRUNCHER.get(), 11127234, 5757312);
+    public static final Supplier<SpawnEggItem> GOOP_SPAWN_EGG = RegistryHelper.registerSpawnEgg("goop", ModEntities.GOOP, 13946012, 11637089);
+    public static final Supplier<SpawnEggItem> CRUNCHER_SPAWN_EGG = RegistryHelper.registerSpawnEgg("cruncher", ModEntities.CRUNCHER, 11127234, 5757312);
 
     public static void init() {
 

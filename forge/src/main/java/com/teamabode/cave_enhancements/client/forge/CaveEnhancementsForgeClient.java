@@ -37,14 +37,14 @@ public class CaveEnhancementsForgeClient {
     }
 
     @SubscribeEvent
-    public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+    public static void registerEntityRenderers(final EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.GOOP.get(), GoopRenderer::new);
         event.registerEntityRenderer(ModEntities.CRUNCHER.get(), CruncherRenderer::new);
         event.registerEntityRenderer(ModEntities.HARMONIC_ARROW.get(), HarmonicArrowRenderer::new);
         event.registerEntityRenderer(ModEntities.THROWN_GOOP.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(ModEntities.GOOP_DRIP.get(), ThrownItemRenderer::new);
 
-        event.registerBlockEntityRenderer(ModBlockEntities.ROSE_QUARTZ_CHIMES.get(), RoseQuartzChimesRenderer::new);
+        //event.registerBlockEntityRenderer(ModBlockEntities.ROSE_QUARTZ_CHIMES.get(), RoseQuartzChimesRenderer::new);
     }
 
     @SubscribeEvent

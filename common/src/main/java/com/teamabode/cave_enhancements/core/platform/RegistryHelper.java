@@ -29,7 +29,7 @@ public class RegistryHelper {
     }
 
     @ExpectPlatform
-    public static Supplier<SpawnEggItem> registerSpawnEgg(String mobName, EntityType<? extends Mob> entityType, int baseColor, int overlayColor) {
+    public static <T extends Mob> Supplier<SpawnEggItem> registerSpawnEgg(String mobName, Supplier<EntityType<T>> entityType, int baseColor, int overlayColor) {
         throw new AssertionError();
     }
 
@@ -49,12 +49,12 @@ public class RegistryHelper {
     }
 
     @ExpectPlatform
-    public static <T extends EntityType<? extends Entity>>Supplier<T> registerEntityType(String id, Supplier<T> entitySupplier) {
+    public static <T extends Entity>Supplier<EntityType<T>> registerEntityType(String id, Supplier<EntityType<T>> entitySupplier) {
         throw new AssertionError();
     }
 
     @ExpectPlatform
-    public static <T extends BlockEntityType<? extends BlockEntity>>Supplier<T> registerBlockEntityType(String id, Supplier<T> blockEntityTypeSupplier) {
+    public static <T extends BlockEntity>Supplier<BlockEntityType<T>> registerBlockEntityType(String id, Supplier<BlockEntityType<T>> blockEntityTypeSupplier) {
         throw new AssertionError();
     }
 

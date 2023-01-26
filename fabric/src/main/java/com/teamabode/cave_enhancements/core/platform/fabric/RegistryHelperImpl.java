@@ -36,8 +36,8 @@ public class RegistryHelperImpl {
         return () -> item;
     }
 
-    public static Supplier<SpawnEggItem> registerSpawnEgg(String mobName, EntityType<? extends Mob> entityType, int baseColor, int overlayColor) {
-        var item = Registry.register(Registry.ITEM, new ResourceLocation(CaveEnhancements.MODID, mobName + "_spawn_egg"), new SpawnEggItem(entityType, baseColor, overlayColor, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static <T extends Mob> Supplier<SpawnEggItem> registerSpawnEgg(String mobName, Supplier<EntityType<T>> entityType, int baseColor, int overlayColor) {
+        var item = Registry.register(Registry.ITEM, new ResourceLocation(CaveEnhancements.MODID, mobName + "_spawn_egg"), new SpawnEggItem(entityType.get(), baseColor, overlayColor, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
         return () -> item;
     }
 
@@ -58,12 +58,12 @@ public class RegistryHelperImpl {
         return () -> block;
     }
 
-    public static <T extends EntityType<? extends Entity>>Supplier<T> registerEntityType(String id, Supplier<T> entitySupplier) {
+    public static <T extends Entity>Supplier<EntityType<T>> registerEntityType(String id, Supplier<EntityType<T>> entitySupplier) {
         var entityType = Registry.register(Registry.ENTITY_TYPE, new ResourceLocation(CaveEnhancements.MODID, id), entitySupplier.get());
         return () -> entityType;
     }
 
-    public static <T extends BlockEntityType<? extends BlockEntity>>Supplier<T> registerBlockEntityType(String id, Supplier<T> blockEntityTypeSupplier) {
+    public static <T extends BlockEntity>Supplier<BlockEntityType<T>> registerBlockEntityType(String id, Supplier<BlockEntityType<T>> blockEntityTypeSupplier) {
         var blockEntityType = Registry.register(Registry.BLOCK_ENTITY_TYPE, new ResourceLocation(CaveEnhancements.MODID, id), blockEntityTypeSupplier.get());
         return () -> blockEntityType;
     }
