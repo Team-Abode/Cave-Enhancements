@@ -1,11 +1,10 @@
 package com.teamabode.cave_enhancements.core.registry;
 
 import com.teamabode.cave_enhancements.common.block.*;
-import com.teamabode.cave_enhancements.common.item.DrippingGoopItem;
+import com.teamabode.cave_enhancements.common.block.weathering.WeatherState;
 import com.teamabode.cave_enhancements.core.platform.RegistryHelper;
 import com.teamabode.cave_enhancements.core.registry.misc.BlockProperties;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -44,11 +43,20 @@ public class ModBlocks {
     public static final Supplier<Block> GLOW_SPLOTCH = RegistryHelper.registerBlock("glow_splotch", () -> new SplatBlock(BlockProperties.getDefault(Material.CLAY).color(MaterialColor.COLOR_CYAN).sound(SoundType.HONEY_BLOCK).noCollission().noOcclusion().instabreak().lightLevel(state -> 8), ModItems.GLOW_PASTE));
     public static final Supplier<Block> SPECTACLE_CANDLE = RegistryHelper.registerBlockWithItem("spectacle_candle", () -> new SpectacleCandleBlock(BlockBehaviour.Properties.copy(Blocks.CANDLE)), CreativeModeTab.TAB_DECORATIONS);
     public static final Supplier<Block> SPECTACLE_CANDLE_CAKE = RegistryHelper.registerBlock("spectacle_candle_cake", () -> new SpectacleCandleCakeBlock(SPECTACLE_CANDLE.get(), BlockBehaviour.Properties.copy(Blocks.CAKE).lightLevel(litBlockEmission(3))));
+    public static final Supplier<Block> DRIPSTONE_TORTOISE_EGG = RegistryHelper.registerBlockWithItem("dripstone_tortoise_egg", () -> new DripstoneTortoiseEggBlock(BlockBehaviour.Properties.copy(Blocks.TURTLE_EGG)), CreativeModeTab.TAB_MISC);
 
     public static final Supplier<Block> LIGHTNING_ANCHOR = RegistryHelper.registerBlockWithItem("lightning_anchor", () -> new LightningAnchorBlock(BlockProperties.LIGHTNING_ANCHOR), CreativeModeTab.TAB_REDSTONE);
     public static final Supplier<Block> CHARGED_LIGHTNING_ANCHOR = RegistryHelper.registerBlockWithItem("charged_lightning_anchor", () -> new LightningAnchorBlock(BlockProperties.LIGHTNING_ANCHOR), CreativeModeTab.TAB_REDSTONE);
 
-    public static final Supplier<Block> DRIPSTONE_TORTOISE_EGG = RegistryHelper.registerBlockWithItem("dripstone_tortoise_egg", () -> new DripstoneTortoiseEggBlock(BlockBehaviour.Properties.copy(Blocks.TURTLE_EGG)), CreativeModeTab.TAB_MISC);
+    public static final Supplier<Block> REDSTONE_RECEIVER = RegistryHelper.registerBlockWithItem("redstone_receiver", () -> new ReceiverBlock(WeatherState.UNAFFECTED, BlockProperties.redstoneReceiver(true)), CreativeModeTab.TAB_REDSTONE);
+    public static final Supplier<Block> EXPOSED_REDSTONE_RECEIVER = RegistryHelper.registerBlockWithItem("exposed_redstone_receiver", () -> new ReceiverBlock(WeatherState.EXPOSED, BlockProperties.redstoneReceiver(true)), CreativeModeTab.TAB_REDSTONE);
+    public static final Supplier<Block> WEATHERED_REDSTONE_RECEIVER = RegistryHelper.registerBlockWithItem("weathered_redstone_receiver", () -> new ReceiverBlock(WeatherState.WEATHERED, BlockProperties.redstoneReceiver(true)), CreativeModeTab.TAB_REDSTONE);
+    public static final Supplier<Block> OXIDIZED_REDSTONE_RECEIVER = RegistryHelper.registerBlockWithItem("oxidized_redstone_receiver", () -> new ReceiverBlock(WeatherState.OXIDIZED, BlockProperties.redstoneReceiver(true)), CreativeModeTab.TAB_REDSTONE);
+
+    public static final Supplier<Block> WAXED_REDSTONE_RECEIVER = RegistryHelper.registerBlockWithItem("waxed_redstone_receiver", () -> new ReceiverBlock(WeatherState.WAXED_UNAFFECTED, BlockProperties.redstoneReceiver(false)), CreativeModeTab.TAB_REDSTONE);
+    public static final Supplier<Block> WAXED_EXPOSED_REDSTONE_RECEIVER = RegistryHelper.registerBlockWithItem("waxed_exposed_redstone_receiver", () -> new ReceiverBlock(WeatherState.WAXED_EXPOSED, BlockProperties.redstoneReceiver(false)), CreativeModeTab.TAB_REDSTONE);
+    public static final Supplier<Block> WAXED_WEATHERED_REDSTONE_RECEIVER = RegistryHelper.registerBlockWithItem("waxed_weathered_redstone_receiver", () -> new ReceiverBlock(WeatherState.WAXED_WEATHERED, BlockProperties.redstoneReceiver(false)), CreativeModeTab.TAB_REDSTONE);
+    public static final Supplier<Block> WAXED_OXIDIZED_REDSTONE_RECEIVER = RegistryHelper.registerBlockWithItem("waxed_oxidized_redstone_receiver", () -> new ReceiverBlock(WeatherState.WAXED_OXIDIZED, BlockProperties.redstoneReceiver(false)), CreativeModeTab.TAB_REDSTONE);
 
     private static ToIntFunction<BlockState> litBlockEmission(int i) {
         return (blockState) -> blockState.getValue(BlockStateProperties.LIT) ? i : 0;

@@ -1,5 +1,6 @@
 package com.teamabode.cave_enhancements;
 
+import com.teamabode.cave_enhancements.common.block.weathering.WeatheringBlock;
 import com.teamabode.cave_enhancements.core.platform.RegistryHelper;
 import com.teamabode.cave_enhancements.core.registry.*;
 import net.minecraft.ChatFormatting;
@@ -32,13 +33,21 @@ public class CaveEnhancements {
     }
 
     public static void queuedWork() {
+        WeatheringBlock.addWeatherBlockPair(ModBlocks.REDSTONE_RECEIVER.get(), ModBlocks.EXPOSED_REDSTONE_RECEIVER.get());
+        WeatheringBlock.addWeatherBlockPair(ModBlocks.EXPOSED_REDSTONE_RECEIVER.get(), ModBlocks.WEATHERED_REDSTONE_RECEIVER.get());
+        WeatheringBlock.addWeatherBlockPair(ModBlocks.WEATHERED_REDSTONE_RECEIVER.get(), ModBlocks.OXIDIZED_REDSTONE_RECEIVER.get());
+
+        WeatheringBlock.addWaxBlockPair(ModBlocks.REDSTONE_RECEIVER.get(), ModBlocks.WAXED_REDSTONE_RECEIVER.get());
+        WeatheringBlock.addWaxBlockPair(ModBlocks.EXPOSED_REDSTONE_RECEIVER.get(), ModBlocks.WAXED_EXPOSED_REDSTONE_RECEIVER.get());
+        WeatheringBlock.addWaxBlockPair(ModBlocks.WEATHERED_REDSTONE_RECEIVER.get(), ModBlocks.WAXED_WEATHERED_REDSTONE_RECEIVER.get());
+        WeatheringBlock.addWaxBlockPair(ModBlocks.OXIDIZED_REDSTONE_RECEIVER.get(), ModBlocks.WAXED_OXIDIZED_REDSTONE_RECEIVER.get());
+
         PotionBrewing.addMix(Potions.AWKWARD, ModItems.ROSE_QUARTZ.get(), ModPotions.REVERSAL.get());
         PotionBrewing.addMix(ModPotions.REVERSAL.get(), Items.REDSTONE, ModPotions.LONG_REVERSAL.get());
     }
 
     public static void addPotionTooltip(ItemStack itemStack, TooltipFlag tooltipFlag, List<Component> componentList) {
         if (PotionUtils.getPotion(itemStack) == ModPotions.REVERSAL.get() || PotionUtils.getPotion(itemStack) == ModPotions.LONG_REVERSAL.get()) {
-
             int i = 0;
             for (Component component : componentList) {
                 if (!component.contains(Component.translatable("potion.whenDrank").withStyle(ChatFormatting.DARK_PURPLE))) {

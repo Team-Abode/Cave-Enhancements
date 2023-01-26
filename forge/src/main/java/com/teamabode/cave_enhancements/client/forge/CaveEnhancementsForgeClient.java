@@ -34,6 +34,16 @@ public class CaveEnhancementsForgeClient {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLOW_SPLOTCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.JAGGED_ROSE_QUARTZ.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ROSE_QUARTZ_CHIMES.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.REDSTONE_RECEIVER.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.EXPOSED_REDSTONE_RECEIVER.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WEATHERED_REDSTONE_RECEIVER.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.OXIDIZED_REDSTONE_RECEIVER.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WAXED_REDSTONE_RECEIVER.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WAXED_EXPOSED_REDSTONE_RECEIVER.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WAXED_WEATHERED_REDSTONE_RECEIVER.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WAXED_OXIDIZED_REDSTONE_RECEIVER.get(), RenderType.cutout());
     }
 
     @SubscribeEvent

@@ -17,6 +17,12 @@ public class BlockProperties {
         return properties;
     }
 
+    public static BlockBehaviour.Properties redstoneReceiver(boolean randomTick) {
+        BlockBehaviour.Properties properties = getDefault(Material.METAL).sound(SoundType.COPPER).instabreak();
+        if (randomTick) properties.randomTicks();
+        return properties;
+    }
+
     public static final BlockBehaviour.Properties ROSE_QUARTZ_BLOCKS = BlockBehaviour.Properties.of(Material.STONE)
             .strength(1.0F, 10.0F)
             .requiresCorrectToolForDrops()
