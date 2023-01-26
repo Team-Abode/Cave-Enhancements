@@ -130,5 +130,7 @@
     "death.attack.viscous": "%1$s was stuck into the ground too hard",
     "death.attack.viscous.player": "%1$s was glued whilst fighting %2$s",
     "death.attack.goop_drip": "%1$s was soaked in goop",
-    "death.attack.goop_drip.player": "%1$s was overwhelmed by goop whilst fighting %2$s"
+    "death.attack.goop_drip.player": "%1$s was overwhelmed by goop whilst fighting %2$s",
+
+    "gameplay.reversal": "Reverse damage onto enemies"
 }

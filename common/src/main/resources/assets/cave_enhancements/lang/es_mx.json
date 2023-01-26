@@ -128,5 +128,7 @@
     "death.attack.viscous": "%1$s se pegó al suelo muy fuerte",
     "death.attack.viscous.player": "%1$s se pegó al suelo muy fuerte mientras peleaba con %2$s",
     "death.attack.goop_drip": "%1$s se empapó en goop",
-    "death.attack.goop_drip.player": "%1$s se empapó en goop mientras peleaba con %2$s"
+    "death.attack.goop_drip.player": "%1$s se empapó en goop mientras peleaba con %2$s",
+
+    "gameplay.reversal": "Invertir daño a los enemigos"
 }

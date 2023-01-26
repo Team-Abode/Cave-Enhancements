@@ -8,6 +8,7 @@ import com.teamabode.cave_enhancements.core.platform.forge.RegistryHelperImpl;
 import com.teamabode.cave_enhancements.core.registry.ModEntities;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -34,6 +35,7 @@ public class CaveEnhancementsForge {
 
         eventBus.addListener(this::commonSetup);
         eventBus.addListener(this::registerEntityAttributes);
+        MinecraftForge.EVENT_BUS.addListener(this::addTooltipEvent);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -46,5 +48,9 @@ public class CaveEnhancementsForge {
         event.put(ModEntities.GOOP.get(), Goop.createGoopAttributes().build());
         event.put(ModEntities.CRUNCHER.get(), Cruncher.createCruncherAttributes().build());
         event.put(ModEntities.DRIPSTONE_TORTOISE.get(), DripstoneTortoise.createDripstoneTortoiseAttributes().build());
+    }
+
+    private void addTooltipEvent(ItemTooltipEvent event) {
+        CaveEnhancements.addPotionTooltip(event.getItemStack(), event.getFlags(), event.getToolTip());
     }
 }

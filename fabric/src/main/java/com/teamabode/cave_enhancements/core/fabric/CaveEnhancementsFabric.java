@@ -6,6 +6,7 @@ import com.teamabode.cave_enhancements.common.entity.dripstone_tortoise.Dripston
 import com.teamabode.cave_enhancements.common.entity.goop.Goop;
 import com.teamabode.cave_enhancements.core.registry.ModEntities;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 
 public class CaveEnhancementsFabric implements ModInitializer {
@@ -17,5 +18,7 @@ public class CaveEnhancementsFabric implements ModInitializer {
         FabricDefaultAttributeRegistry.register(ModEntities.GOOP.get(), Goop.createGoopAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.CRUNCHER.get(), Cruncher.createCruncherAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.DRIPSTONE_TORTOISE.get(), DripstoneTortoise.createDripstoneTortoiseAttributes());
+
+        ItemTooltipCallback.EVENT.register(CaveEnhancements::addPotionTooltip);
     }
 }
