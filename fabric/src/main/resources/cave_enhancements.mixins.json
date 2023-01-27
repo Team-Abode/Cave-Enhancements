@@ -5,6 +5,7 @@
   "client": [
   ],
   "mixins": [
+    "RedstoneWireBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

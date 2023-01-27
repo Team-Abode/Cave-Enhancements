@@ -3,6 +3,7 @@ package com.teamabode.cave_enhancements.common.block;
 import com.teamabode.cave_enhancements.common.block.entity.ReceiverBlockEntity;
 import com.teamabode.cave_enhancements.common.block.weathering.WeatherState;
 import com.teamabode.cave_enhancements.common.block.weathering.WeatheringBlock;
+import dev.architectury.injectables.annotations.PlatformOnly;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.DustParticleOptions;
@@ -186,5 +187,11 @@ public class ReceiverBlock extends DiodeBlock implements WeatheringBlock, Entity
 
     public RenderShape getRenderShape(BlockState blockState) {
         return RenderShape.MODEL;
+    }
+
+    @PlatformOnly(PlatformOnly.FORGE)
+    public boolean canConnectRedstone(BlockState blockState, BlockGetter level, BlockPos pos, @Nullable Direction direction) {
+        if (direction == null) return false;
+        return direction == blockState.getValue(FACING) || direction.getOpposite() == blockState.getValue(FACING);
     }
 }
