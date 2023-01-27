@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 
 public class ModItems {
 
-    public static final Supplier<Item> AMETHYST_FLUTE = RegistryHelper.registerItem("amethyst_flute", () -> new AmethystFluteItem(ItemProperties.tool(64)));
+    public static final Supplier<Item> AMETHYST_FLUTE = RegistryHelper.registerItem("amethyst_flute", () -> new AmethystFluteItem(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).stacksTo(1)));
     public static final Supplier<Item> GOOP = RegistryHelper.registerItem("goop", () -> new GoopItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final Supplier<Item> ROSE_QUARTZ = RegistryHelper.registerItem("rose_quartz", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final Supplier<Item> GLOW_BERRY_JUICE = RegistryHelper.registerItem("glow_berry_juice", () -> new GlowBerryJuiceItem(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).stacksTo(16)));
