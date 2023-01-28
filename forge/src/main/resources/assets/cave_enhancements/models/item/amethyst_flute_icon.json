@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "gui_light": "front",
+  "textures": {
+    "layer0": "cave_enhancements:item/amethyst_flute"
+  }
+}

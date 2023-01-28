@@ -1,0 +1,18 @@
+{
+  "loader": "forge:separate-perspective",
+  "base": {
+    "parent": "cave_enhancements:item/amethyst_flute_in_hand"
+  },
+  "gui_light": "front",
+  "perspectives": {
+    "gui": {
+      "parent": "cave_enhancements:item/amethyst_flute_icon"
+    },
+    "fixed": {
+      "parent": "cave_enhancements:item/amethyst_flute_icon"
+    },
+    "ground": {
+      "parent": "cave_enhancements:item/amethyst_flute_icon"
+    }
+  }
+}

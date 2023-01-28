@@ -3,6 +3,8 @@
   "package": "com.teamabode.cave_enhancements.core.fabric.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
+    "client.ItemRendererMixin",
+    "client.ModelBakeryMixin"
   ],
   "mixins": [
     "RedstoneWireBlockMixin"
