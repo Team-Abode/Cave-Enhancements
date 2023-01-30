@@ -35,6 +35,7 @@ public class CaveEnhancements {
         ModEffects.init();
         ModPotions.init();
         ModBiomes.init();
+        ModFeatures.init();
         RegistryHelper.registerBannerPattern("goop");
     }
 

@@ -26,6 +26,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BannerPattern;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 
 import java.util.function.Supplier;
 
@@ -76,6 +78,11 @@ public class RegistryHelperImpl {
     public static Supplier<Biome> registerBiome(String id, Supplier<Biome> biomeSupplier) {
         var biome = Registry.register(BuiltinRegistries.BIOME, new ResourceLocation(CaveEnhancements.MODID, id), biomeSupplier.get());
         return () -> biome;
+    }
+
+    public static <T extends FeatureConfiguration> Supplier<Feature<T>> registerFeature(String id, Supplier<Feature<T>> featureSupplier) {
+        var feature = Registry.register(Registry.FEATURE, new ResourceLocation(CaveEnhancements.MODID, id), featureSupplier.get());
+        return () -> feature;
     }
 
     public static Supplier<MobEffect> registerEffect(String id, Supplier<MobEffect> mobEffectSupplier) {

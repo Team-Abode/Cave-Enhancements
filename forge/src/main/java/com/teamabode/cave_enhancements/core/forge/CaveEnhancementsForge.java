@@ -6,6 +6,8 @@ import com.teamabode.cave_enhancements.common.entity.dripstone_tortoise.Dripston
 import com.teamabode.cave_enhancements.common.entity.goop.Goop;
 import com.teamabode.cave_enhancements.core.platform.forge.RegistryHelperImpl;
 import com.teamabode.cave_enhancements.core.registry.ModEntities;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -30,6 +32,7 @@ public class CaveEnhancementsForge {
         RegistryHelperImpl.BLOCKS.register(eventBus);
         RegistryHelperImpl.BLOCK_ENTITY_TYPES.register(eventBus);
         RegistryHelperImpl.BIOMES.register(eventBus);
+        RegistryHelperImpl.FEATURES.register(eventBus);
         RegistryHelperImpl.MOB_EFFECTS.register(eventBus);
         RegistryHelperImpl.POTIONS.register(eventBus);
         RegistryHelperImpl.BANNER_PATTERNS.register(eventBus);
@@ -42,7 +45,12 @@ public class CaveEnhancementsForge {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(CaveEnhancements::queuedWork);
+        event.enqueueWork(() -> {
+            CaveEnhancements.queuedWork();
+            SpawnPlacements.register(ModEntities.GOOP.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING, Goop::checkGoopSpawnRules);
+            SpawnPlacements.register(ModEntities.CRUNCHER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING, Cruncher::checkCruncherSpawnRules);
+            SpawnPlacements.register(ModEntities.DRIPSTONE_TORTOISE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING, DripstoneTortoise::checkDripstoneTortoiseSpawnRules);
+        });
     }
 
     private void registerEntityAttributes(EntityAttributeCreationEvent event) {

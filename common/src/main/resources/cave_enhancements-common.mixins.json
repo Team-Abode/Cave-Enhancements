@@ -6,7 +6,8 @@
     "DigDurabilityEnchantmentMixin",
     "EnchantmentMixin",
     "LightningBoltMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "OverworldBiomeBuilderMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -18,6 +18,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BannerPattern;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 
 import java.util.function.Supplier;
 
@@ -65,6 +67,11 @@ public class RegistryHelper {
 
     @ExpectPlatform
     public static Supplier<Biome> registerBiome(String id, Supplier<Biome> biomeSupplier) {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
+    public static <T extends FeatureConfiguration> Supplier<Feature<T>> registerFeature(String id, Supplier<Feature<T>> featureSupplier) {
         throw new AssertionError();
     }
 

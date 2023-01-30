@@ -1,0 +1,75 @@
+{
+  "type": "minecraft:block_column",
+  "config": {
+    "direction": "down",
+    "allowed_placement": {
+      "type": "minecraft:matching_blocks",
+      "offset": [ 0, 0, 0 ],
+      "blocks": [
+        "minecraft:air",
+        "minecraft:water"
+      ]
+    },
+    "prioritize_tip": true,
+    "layers": [
+      {
+        "height": {
+          "type": "minecraft:weighted_list",
+          "distribution": [
+            {
+              "weight": 1,
+              "data": {
+                "type": "minecraft:uniform",
+                "value": {
+                  "min_inclusive": 6,
+                  "max_inclusive": 12
+                }
+              }
+            },
+            {
+              "weight": 1,
+              "data": {
+                "type": "minecraft:uniform",
+                "value": {
+                  "min_inclusive": 2,
+                  "max_inclusive": 5
+                }
+              }
+            },
+            {
+              "weight": 2,
+              "data": {
+                "type": "minecraft:uniform",
+                "value": {
+                  "min_inclusive": 8,
+                  "max_inclusive": 10
+                }
+              }
+            }
+          ]
+        },
+        "provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "cave_enhancements:dripping_goop",
+            "Properties": {
+              "hanging": "false"
+            }
+          }
+        }
+      },
+      {
+        "height": 1,
+        "provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "cave_enhancements:dripping_goop",
+            "Properties": {
+              "hanging": "true"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

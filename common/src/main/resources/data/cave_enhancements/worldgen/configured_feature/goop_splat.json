@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:multiface_growth",
+  "config": {
+    "block": "cave_enhancements:goop_splat",
+    "search_range": 32,
+    "chance_of_spreading": 0.9,
+    "can_place_on_floor": false,
+    "can_place_on_ceiling": true,
+    "can_place_on_wall": true,
+    "can_be_placed_on": [
+      "minecraft:stone",
+      "minecraft:andesite",
+      "minecraft:diorite",
+      "minecraft:granite",
+      "minecraft:dripstone_block",
+      "minecraft:calcite",
+      "minecraft:tuff",
+      "minecraft:deepslate"
+    ]
+  }
+}
