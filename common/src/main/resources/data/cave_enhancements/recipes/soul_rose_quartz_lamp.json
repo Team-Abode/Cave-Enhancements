@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "i": {
+      "item": "minecraft:iron_nugget"
+    },
+    "r": {
+      "item": "cave_enhancements:rose_quartz"
+    },
+    "t": {
+      "item": "minecraft:soul_torch"
+    }
+  },
+  "pattern": [
+    " r ",
+    "iti",
+    " i "
+  ],
+  "result": {
+    "item": "cave_enhancements:soul_rose_quartz_lamp"
+  }
+}

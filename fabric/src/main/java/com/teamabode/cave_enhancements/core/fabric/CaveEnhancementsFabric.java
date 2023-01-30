@@ -32,7 +32,7 @@ public class CaveEnhancementsFabric implements ModInitializer {
         SpawnRestrictionAccessor.callRegister(ModEntities.DRIPSTONE_TORTOISE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING, DripstoneTortoise::checkDripstoneTortoiseSpawnRules);
 
         BiomeModifications.addSpawn(BiomeSelectors.includeByKey(Biomes.LUSH_CAVES), MobCategory.MONSTER, ModEntities.CRUNCHER.get(), 10, 1, 1);
-        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(Biomes.LUSH_CAVES), MobCategory.MONSTER, ModEntities.DRIPSTONE_TORTOISE.get(), 50, 1, 1);
+        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(Biomes.DRIPSTONE_CAVES), MobCategory.MONSTER, ModEntities.DRIPSTONE_TORTOISE.get(), 50, 2, 3);
 
         ItemTooltipCallback.EVENT.register(CaveEnhancements::addPotionTooltip);
     }

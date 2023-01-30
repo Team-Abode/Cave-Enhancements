@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "cave_enhancements:rose_quartz_tiles"
+  },
+  "result": "cave_enhancements:rose_quartz_tile_slab"
+}

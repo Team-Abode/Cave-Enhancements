@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "minecraft:copper_block"
+    },
+    "R": {
+      "item": "cave_enhancements:rose_quartz"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "CRC",
+    "CCC"
+  ],
+  "result": {
+    "item": "cave_enhancements:lightning_anchor"
+  }
+}

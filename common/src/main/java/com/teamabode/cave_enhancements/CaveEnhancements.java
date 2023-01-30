@@ -3,9 +3,8 @@ package com.teamabode.cave_enhancements;
 import com.teamabode.cave_enhancements.common.block.weathering.WeatheringBlock;
 import com.teamabode.cave_enhancements.core.platform.RegistryHelper;
 import com.teamabode.cave_enhancements.core.registry.*;
+import com.teamabode.cave_enhancements.core.registry.misc.ModDispenserBehavior;
 import net.minecraft.ChatFormatting;
-import net.minecraft.data.worldgen.BiomeDefaultFeatures;
-import net.minecraft.data.worldgen.biome.OverworldBiomes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -13,12 +12,9 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.rmi.registry.Registry;
 import java.util.List;
 
 public class CaveEnhancements {
@@ -51,6 +47,8 @@ public class CaveEnhancements {
 
         PotionBrewing.addMix(Potions.AWKWARD, ModItems.ROSE_QUARTZ.get(), ModPotions.REVERSAL.get());
         PotionBrewing.addMix(ModPotions.REVERSAL.get(), Items.REDSTONE, ModPotions.LONG_REVERSAL.get());
+
+        ModDispenserBehavior.init();
     }
 
     public static void addPotionTooltip(ItemStack itemStack, TooltipFlag tooltipFlag, List<Component> componentList) {

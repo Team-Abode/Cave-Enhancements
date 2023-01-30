@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_glass_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:glass_bottle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_glow_berries": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:glow_berries"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sugar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:sugar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:glow_berry_juice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_glow_berries",
+      "has_sugar",
+      "has_glass_bottle",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:glow_berry_juice"
+    ]
+  }
+}

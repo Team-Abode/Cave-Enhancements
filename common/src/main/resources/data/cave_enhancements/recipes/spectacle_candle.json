@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "item": "minecraft:glow_ink_sac"
+    },
+    "H": {
+      "item": "minecraft:honeycomb"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "S",
+    "H",
+    "G"
+  ],
+  "result": {
+    "item": "cave_enhancements:spectacle_candle"
+  }
+}

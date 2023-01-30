@@ -24,13 +24,13 @@ public class ModEntities {
     );
 
     public static final Supplier<EntityType<Cruncher>> CRUNCHER = RegistryHelper.registerEntityType("cruncher", () ->
-            EntityType.Builder.of(Cruncher::new, MobCategory.CREATURE)
+            EntityType.Builder.of(Cruncher::new, MobCategory.MONSTER)
                     .sized(0.8F, 0.8F)
                     .clientTrackingRange(10)
                     .build(dataFixer("cruncher")));
 
     public static final Supplier<EntityType<DripstoneTortoise>> DRIPSTONE_TORTOISE = RegistryHelper.registerEntityType("dripstone_tortoise", () ->
-            EntityType.Builder.of(DripstoneTortoise::new, MobCategory.CREATURE)
+            EntityType.Builder.of(DripstoneTortoise::new, MobCategory.MONSTER)
                     .sized(1.3F, 0.8F)
                     .clientTrackingRange(10)
                     .build(dataFixer("dripstone_tortoise"))

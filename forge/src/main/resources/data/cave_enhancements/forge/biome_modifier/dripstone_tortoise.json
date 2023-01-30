@@ -4,8 +4,8 @@
   "spawners": {
     "type": "cave_enhancements:dripstone_tortoise",
     "weight": 50,
-    "minCount": 1,
-    "maxCount": 1
+    "minCount": 2,
+    "maxCount": 3
   },
   "category": "monster"
 }

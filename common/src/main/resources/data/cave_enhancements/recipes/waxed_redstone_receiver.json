@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "minecraft:waxed_copper_block"
+    },
+    "T": {
+      "item": "minecraft:redstone_torch"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "rTr",
+    "CCC"
+  ],
+  "result": {
+    "item": "cave_enhancements:waxed_redstone_receiver"
+  }
+}

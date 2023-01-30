@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "cave_enhancements:goop"
+    }
+  },
+  "pattern": [
+    "X",
+    "X",
+    "X"
+  ],
+  "result": {
+    "item": "cave_enhancements:dripping_goop"
+  }
+}

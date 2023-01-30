@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "g": {
+      "item": "minecraft:ghast_tear"
+    },
+    "r": {
+      "item": "cave_enhancements:rose_quartz"
+    },
+    "s": {
+      "item": "minecraft:stone_bricks"
+    },
+    "t": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "sgs",
+    "t t",
+    "r r"
+  ],
+  "result": {
+    "item": "cave_enhancements:rose_quartz_chimes"
+  }
+}

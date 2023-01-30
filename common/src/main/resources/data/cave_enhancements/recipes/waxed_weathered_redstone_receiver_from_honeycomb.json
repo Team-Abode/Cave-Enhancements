@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cave_enhancements:weathered_redstone_receiver"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "item": "cave_enhancements:waxed_weathered_redstone_receiver"
+  }
+}

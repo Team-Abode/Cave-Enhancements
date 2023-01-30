@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "item": "minecraft:glow_ink_sac"
+    },
+    "X": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "X ",
+    " G"
+  ],
+  "result": {
+    "item": "cave_enhancements:glow_paste"
+  }
+}

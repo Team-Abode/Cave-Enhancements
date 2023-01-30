@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "Y": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "X",
+    "#",
+    "Y"
+  ],
+  "result": {
+    "count": 2,
+    "item": "cave_enhancements:harmonic_arrow"
+  }
+}

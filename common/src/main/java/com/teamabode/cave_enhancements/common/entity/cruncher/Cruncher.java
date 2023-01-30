@@ -285,7 +285,7 @@ public class Cruncher extends Animal {
     }
 
     public float getWalkTargetValue(BlockPos pos, LevelReader level) {
-        return 0.0F;
+        return 10.0F;
     }
 
     // Attribute Builder

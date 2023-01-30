@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "minecraft:oxidized_copper"
+    },
+    "T": {
+      "item": "minecraft:redstone_torch"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "rTr",
+    "CCC"
+  ],
+  "result": {
+    "item": "cave_enhancements:oxidized_redstone_receiver"
+  }
+}
