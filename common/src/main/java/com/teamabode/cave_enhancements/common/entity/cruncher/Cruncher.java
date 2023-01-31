@@ -6,17 +6,14 @@ import com.teamabode.cave_enhancements.core.registry.ModItems;
 import com.teamabode.cave_enhancements.core.registry.ModSounds;
 import com.teamabode.cave_enhancements.core.registry.ModTags;
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.NbtUtils;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
@@ -168,10 +165,9 @@ public class Cruncher extends Animal {
             }
             if (itemStack.is(Items.GLOW_BERRIES) && this.getEatingState() == 0) {
                 if (this.getSearchCooldownTime() > 0) {
-                    fail();
+                    particleResponse(false);
                     return InteractionResult.PASS;
                 }
-
                 this.setEatingState(1);
                 this.setFeedingPlayer(player);
                 this.eatingEffects(itemStack);
@@ -179,19 +175,19 @@ public class Cruncher extends Animal {
                 this.gameEvent(GameEvent.ENTITY_INTERACT, player);
                 return InteractionResult.SUCCESS;
             }
+            return super.mobInteract(player, hand);
         }
-        fail();
-        return InteractionResult.PASS;
+        return super.mobInteract(player, hand);
     }
 
-    public void fail() {
+    public void particleResponse(boolean success) {
         if (level instanceof ServerLevel server) {
             for (int i = 0; i < 7; i++) {
                 double gaussX = this.random.nextGaussian() * 0.02;
                 double gaussY = this.random.nextGaussian() * 0.02;
                 double gaussZ = this.random.nextGaussian() * 0.02;
 
-                server.sendParticles(ParticleTypes.SMOKE, this.getRandomX(1.0D), this.getRandomY() + 0.5, this.getRandomZ(1.0D), 1, gaussX, gaussY, gaussZ, 0.0F);
+                server.sendParticles(success ? ParticleTypes.HAPPY_VILLAGER : ParticleTypes.SMOKE, this.getRandomX(0.6D), this.getRandomY() + 0.15, this.getRandomZ(0.6D), 1, gaussX, gaussY, gaussZ, 0.0F);
             }
         }
     }
@@ -328,8 +324,13 @@ public class Cruncher extends Animal {
     }
 
     protected void playStepSound(BlockPos pos, BlockState state) {
+        super.playStepSound(pos, state);
         SoundEvent sound = ModSounds.ENTITY_CRUNCHER_STEP.get();
         this.playSound(sound, 0.15F, 1.0F);
+    }
+
+    protected float nextStep() {
+        return super.nextStep();
     }
 
     protected SoundEvent getDeathSound() {

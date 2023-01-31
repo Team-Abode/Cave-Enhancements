@@ -70,6 +70,7 @@ public class CruncherEatBlockGoal extends Goal {
     }
 
     public void stop() {
+        cruncher.particleResponse(true);
         cruncher.setFeedingPlayer(null);
         cruncher.setEatingState(0);
         cruncher.setSearchCooldownTime(240);

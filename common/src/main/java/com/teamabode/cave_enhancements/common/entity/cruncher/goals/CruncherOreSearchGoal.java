@@ -4,8 +4,6 @@ import com.mojang.datafixers.util.Pair;
 import com.teamabode.cave_enhancements.common.entity.cruncher.Cruncher;
 import com.teamabode.cave_enhancements.core.registry.ModTags;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.level.Level;
@@ -60,10 +58,9 @@ public class CruncherOreSearchGoal extends Goal {
             cruncher.setDeltaMovement(0.0, 0.0, 0.0);
             cruncher.teleportToWithTicket(targetPos.getX() + 0.5D, targetPos.getY(), targetPos.getZ() + 0.5D);
             cruncher.setEatingState(2);
-            System.out.println(cruncher.getEatingState());
             cruncher.setTargetPos(targetPos);
         } else {
-            cruncher.fail();
+            cruncher.particleResponse(false);
             cruncher.setEatingState(0);
             cruncher.getNavigation().stop();
         }
@@ -104,9 +101,6 @@ public class CruncherOreSearchGoal extends Goal {
 
         int randomSelection = level.getRandom().nextInt(potentialPositions.size());
         Pair<BlockPos, Integer> pair = potentialPositions.get(randomSelection);
-
-        cruncher.setOrePosY(pair.getSecond());
-        System.out.println(cruncher.getOrePosY());
         return pair.getFirst();
     }
 
