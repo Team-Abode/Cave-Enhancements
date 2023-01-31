@@ -13,12 +13,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_rose_quartz": {
+    "has_quartz": {
       "conditions": {
         "items": [
           {
             "items": [
-              "cave_enhancements:rose_quartz"
+              "minecraft:quartz"
             ]
           }
         ]
@@ -35,7 +35,7 @@
   "requirements": [
     [
       "has_copper_block",
-      "has_rose_quartz",
+      "has_quartz",
       "has_the_recipe"
     ]
   ],

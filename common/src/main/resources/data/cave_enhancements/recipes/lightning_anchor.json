@@ -4,13 +4,13 @@
     "C": {
       "item": "minecraft:copper_block"
     },
-    "R": {
-      "item": "cave_enhancements:rose_quartz"
+    "Q": {
+      "item": "minecraft:quartz"
     }
   },
   "pattern": [
     "CCC",
-    "CRC",
+    "CQC",
     "CCC"
   ],
   "result": {
