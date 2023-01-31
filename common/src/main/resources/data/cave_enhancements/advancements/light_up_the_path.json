@@ -4,17 +4,17 @@
       "item": "cave_enhancements:glow_paste"
     },
     "title": {
-      "translate": "advancements.underground.place_glow_paste.title"
+      "translate": "advancements.husbandry.light_up_the_path.title"
     },
     "description": {
-      "translate": "advancements.underground.place_glow_paste.description"
+      "translate": "advancements.husbandry.light_up_the_path.description"
     },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "cave_enhancements:underground/root",
+  "parent": "minecraft:husbandry/make_a_sign_glow",
   "criteria": {
     "glow_splotch": {
       "trigger": "minecraft:placed_block",
@@ -23,9 +23,5 @@
       }
     }
   },
-  "requirements": [
-    [
-      "glow_splotch"
-    ]
-  ]
+  "requirements": [["glow_splotch"]]
 }

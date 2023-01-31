@@ -6,7 +6,11 @@ import com.teamabode.cave_enhancements.common.item.DrippingGoopItem;
 import com.teamabode.cave_enhancements.core.platform.RegistryHelper;
 import com.teamabode.cave_enhancements.core.registry.misc.BlockProperties;
 import com.teamabode.cave_enhancements.core.registry.misc.ItemProperties;
+import net.fabricmc.fabric.api.object.builder.v1.advancement.CriterionRegistry;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
+import net.fabricmc.fabric.mixin.object.builder.CriteriaAccessor;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.data.BuiltinRegistries;
@@ -104,5 +108,9 @@ public class RegistryHelperImpl {
     public static Supplier<SimpleParticleType> registerParticle(String id) {
         var particleType = Registry.register(Registry.PARTICLE_TYPE, new ResourceLocation(CaveEnhancements.MODID, id), FabricParticleTypes.simple());
         return () -> particleType;
+    }
+
+    public static <T extends CriterionTrigger<?>> T registerCriteriaTrigger(T criteriaTrigger) {
+        return CriteriaTriggers.register(criteriaTrigger);
     }
 }

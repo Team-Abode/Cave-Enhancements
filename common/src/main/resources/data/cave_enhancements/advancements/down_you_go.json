@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "item": "cave_enhancements:goop_bucket"
+    },
+    "title": {
+      "translate": "advancements.adventure.down_you_go.title"
+    },
+    "description": {
+      "translate": "advancements.adventure.down_you_go.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:adventure/root",
+  "criteria": {
+    "shoot_goop_down": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "cave_enhancements:goop"
+            }
+          }
+        ],
+        "damage": {
+          "type": {
+            "is_projectile": true,
+            "direct_entity": {
+              "type": "minecraft:snowball"
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    ["shoot_goop_down"]
+  ],
+  "rewards": {}
+}

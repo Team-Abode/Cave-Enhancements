@@ -4,19 +4,19 @@
       "item": "minecraft:deepslate"
     },
     "title": {
-      "translate": "advancements.underground.below_zero.title"
+      "translate": "advancements.story.below_zero.title"
     },
     "description": {
-      "translate": "advancements.underground.below_zero.description"
+      "translate": "advancements.story.below_zero.description"
     },
-    "frame": "task",
+    "frame": "goal",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": true
+    "hidden": false
   },
-  "parent": "cave_enhancements:underground/root",
+  "parent": "minecraft:story/mine_diamond",
   "criteria": {
-    "below_zero": {
+    "below_y_zero": {
       "trigger": "minecraft:location",
       "conditions": {
         "player": [
@@ -24,14 +24,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-              "location": {
-                "position": {
-                  "y": {
-                    "min": -64,
-                    "max": 0
-                  }
-                }
-              }
+              "location": { "position": { "y": {"min":  -64, "max":  0} } }
             }
           }
         ]
@@ -39,8 +32,6 @@
     }
   },
   "requirements": [
-    [
-      "below_zero"
-    ]
+    ["below_y_zero"]
   ]
 }

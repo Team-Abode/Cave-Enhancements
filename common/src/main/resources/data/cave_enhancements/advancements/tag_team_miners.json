@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:iron_ore"
+    },
+    "title": {
+      "translate": "advancements.husbandry.tag_team_miners.title"
+    },
+    "description": {
+      "translate": "advancements.husbandry.tag_team_miners.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "treasure": {
+      "trigger": "cave_enhancements:cruncher_found_block"
+    }
+  },
+  "requirements": [
+    ["treasure"]
+  ]
+}

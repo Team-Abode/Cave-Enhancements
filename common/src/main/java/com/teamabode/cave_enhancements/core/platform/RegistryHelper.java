@@ -2,6 +2,7 @@ package com.teamabode.cave_enhancements.core.platform;
 
 import com.teamabode.cave_enhancements.common.block.DrippingGoopBlock;
 import dev.architectury.injectables.annotations.ExpectPlatform;
+import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.sounds.SoundEvent;
@@ -92,6 +93,11 @@ public class RegistryHelper {
 
     @ExpectPlatform
     public static Supplier<SimpleParticleType> registerParticle(String id) {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
+    public static <T extends CriterionTrigger<?>> T registerCriteriaTrigger(T criteriaTrigger) {
         throw new AssertionError();
     }
 }

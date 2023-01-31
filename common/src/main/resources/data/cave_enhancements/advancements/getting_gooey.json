@@ -4,17 +4,17 @@
       "item": "cave_enhancements:goop_trap"
     },
     "title": {
-      "translate": "advancements.underground.stuck_in_goop_trap.title"
+      "translate": "advancements.adventure.getting_gooey.title"
     },
     "description": {
-      "translate": "advancements.underground.stuck_in_goop_trap.description"
+      "translate": "advancements.adventure.getting_gooey.description"
     },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": true
+    "hidden": false
   },
-  "parent": "cave_enhancements:underground/spyglass_at_goop",
+  "parent": "cave_enhancements:down_you_go",
   "criteria": {
     "inside_goop_trap": {
       "trigger": "minecraft:enter_block",

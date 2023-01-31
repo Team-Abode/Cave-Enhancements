@@ -17,7 +17,7 @@ import java.util.function.ToIntFunction;
 
 public class ModBlocks {
 
-    public static final Supplier<Block> GOOP_BLOCK = RegistryHelper.registerBlockWithItem("goop_block", () -> new Block(BlockProperties.goop(false).destroyTime(0.5F).jumpFactor(0.9F)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final Supplier<Block> GOOP_BLOCK = RegistryHelper.registerBlockWithItem("goop_block", () -> new Block(BlockProperties.goop(false).destroyTime(0.5F).speedFactor(0.3F).jumpFactor(0.9F)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final Supplier<Block> GOOP_TRAP = RegistryHelper.registerBlockWithItem("goop_trap", () -> new GoopTrapBlock(BlockProperties.goop(false).destroyTime(2.0F).speedFactor(0.1F)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final Supplier<Block> GOOP_SPLAT = RegistryHelper.registerBlock("goop_splat", () -> new SplatBlock(BlockProperties.goop(true), ModItems.GOOP));
     public static final Supplier<DrippingGoopBlock> DRIPPING_GOOP = RegistryHelper.registerDrippingGoop();

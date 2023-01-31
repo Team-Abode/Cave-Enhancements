@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:diamond_ore"
+    },
+    "title": {
+      "translate": "advancements.husbandry.whos_a_good_cruncher.title"
+    },
+    "description": {
+      "translate": "advancements.husbandry.whos_a_good_cruncher.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "cave_enhancements:tag_team_miners",
+  "criteria": {
+    "diamond_ore": {
+      "trigger": "cave_enhancements:cruncher_found_block",
+      "conditions": {
+        "block": "minecraft:diamond_ore"
+      }
+    },
+    "deepslate_diamond_ore": {
+      "trigger": "cave_enhancements:cruncher_found_block",
+      "conditions": {
+        "block": "minecraft:deepslate_diamond_ore"
+      }
+    }
+  },
+  "requirements": [
+    ["diamond_ore", "deepslate_diamond_ore"]
+  ]
+}

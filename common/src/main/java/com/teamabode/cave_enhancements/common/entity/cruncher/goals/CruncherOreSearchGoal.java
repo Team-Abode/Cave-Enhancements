@@ -63,9 +63,7 @@ public class CruncherOreSearchGoal extends Goal {
             System.out.println(cruncher.getEatingState());
             cruncher.setTargetPos(targetPos);
         } else {
-            if (cruncher.getLevel() instanceof ServerLevel server) {
-                server.sendParticles(ParticleTypes.ANGRY_VILLAGER, cruncher.getX(), cruncher.getY(), cruncher.getZ(), 1, 0, 0, 0, 0);
-            }
+            cruncher.fail();
             cruncher.setEatingState(0);
             cruncher.getNavigation().stop();
         }

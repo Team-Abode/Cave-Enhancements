@@ -1,11 +1,12 @@
 {
-    "replace": false,
     "values": [
-        "#minecraft:dirt",
-        "#minecraft:terracotta",
         "#minecraft:base_stone_overworld",
-        "#minecraft:base_stone_nether",
-        "minecraft:moss_block",
-        "minecraft:gravel"
+        "#minecraft:dirt",
+        "minecraft:calcite",
+        "minecraft:dripstone_block",
+        "minecraft:clay",
+        "minecraft:terracotta",
+        "minecraft:sculk",
+        "cave_enhancements:goop_block"
     ]
 }

@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "cave_enhancements:volatile_goop"
+    },
+    "title": {
+      "translate": "advancements.adventure.vile_hazard.title"
+    },
+    "description": {
+      "translate": "advancements.adventure.vile_hazard.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "cave_enhancements:getting_gooey",
+  "criteria": {
+    "volatile_goop": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cave_enhancements:volatile_goop"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["volatile_goop"]
+  ]
+}

@@ -6,6 +6,9 @@
       "count": 70
     },
     {
+      "type": "minecraft:in_square"
+    },
+    {
       "type": "minecraft:height_range",
       "height": {
         "type": "minecraft:uniform",
@@ -27,19 +30,12 @@
       },
       "allowed_search_condition": {
         "type": "minecraft:matching_blocks",
-        "offset": [
-          0,
-          0,
-          0
-        ],
+        "offset": [ 0, 0, 0 ],
         "blocks": [
           "minecraft:air",
           "minecraft:water"
         ]
       }
-    },
-    {
-      "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:biome"

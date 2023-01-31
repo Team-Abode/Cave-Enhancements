@@ -5,6 +5,8 @@ import com.teamabode.cave_enhancements.common.block.DrippingGoopBlock;
 import com.teamabode.cave_enhancements.common.item.DrippingGoopItem;
 import com.teamabode.cave_enhancements.core.registry.misc.BlockProperties;
 import com.teamabode.cave_enhancements.core.registry.misc.ItemProperties;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
@@ -105,5 +107,9 @@ public class RegistryHelperImpl {
 
     public static Supplier<SimpleParticleType> registerParticle(String id) {
         return PARTICLE_TYPES.register(id, () -> new SimpleParticleType(false));
+    }
+
+    public static <T extends CriterionTrigger<?>> T registerCriteriaTrigger(T criteriaTrigger) {
+        return CriteriaTriggers.register(criteriaTrigger);
     }
 }

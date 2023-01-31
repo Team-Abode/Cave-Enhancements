@@ -5,17 +5,17 @@
       "nbt": "{Damage:0}"
     },
     "title": {
-      "translate": "advancements.underground.cave_explorer.title"
+      "translate": "advancements.adventure.spelunker_voyage.title"
     },
     "description": {
-      "translate": "advancements.underground.cave_explorer.description"
+      "translate": "advancements.adventure.spelunker_voyage.description"
     },
-    "frame": "goal",
+    "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "cave_enhancements:underground/root",
+  "parent": "minecraft:adventure/adventuring_time",
   "criteria": {
     "lush_caves": {
       "trigger": "minecraft:location",
@@ -116,6 +116,6 @@
     ]
   ],
   "rewards": {
-    "experience": 350
+    "experience": 50
   }
 }

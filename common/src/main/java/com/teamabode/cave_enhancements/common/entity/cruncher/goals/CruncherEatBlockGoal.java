@@ -2,7 +2,9 @@ package com.teamabode.cave_enhancements.common.entity.cruncher.goals;
 
 import com.teamabode.cave_enhancements.common.entity.cruncher.Cruncher;
 import com.teamabode.cave_enhancements.core.registry.ModTags;
+import com.teamabode.cave_enhancements.core.registry.misc.ModCriteriaTriggers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.level.Level;
@@ -23,7 +25,12 @@ public class CruncherEatBlockGoal extends Goal {
 
     public boolean canContinueToUse() {
         if (cruncher.getTargetPos() == null) return false;
-        if (cruncher.getBlockY() == cruncher.getOrePosY() + 1) return false;
+        if (cruncher.getBlockY() == cruncher.getOrePosY() + 1) {
+            if (cruncher.getFeedingPlayer() instanceof ServerPlayer serverPlayer) {
+                ModCriteriaTriggers.CRUNCHER_FOUND_BLOCK_TRIGGER.trigger(serverPlayer, cruncher.blockPosition().below());
+            }
+            return false;
+        }
         if (!cruncher.level.getBlockState(cruncher.blockPosition().below()).is(ModTags.CRUNCHER_CONSUMABLES)) return false;
         if (cruncher.level.getBlockState(cruncher.blockPosition().below()).is(ModTags.CRUNCHER_SEARCHABLES)) return false;
         if (cruncher.getLastHurtByMob() == null) return true;
@@ -57,12 +64,13 @@ public class CruncherEatBlockGoal extends Goal {
                 currentTick = 0;
             }
 
-        }else {
+        } else {
             cruncher.getNavigation().moveTo(cruncher.getNavigation().createPath(new BlockPos(vec3), 0), 1.5F);
         }
     }
 
     public void stop() {
+        cruncher.setFeedingPlayer(null);
         cruncher.setEatingState(0);
         cruncher.setSearchCooldownTime(240);
     }

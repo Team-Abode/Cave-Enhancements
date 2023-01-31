@@ -1,8 +1,8 @@
 {
   "type": "minecraft:random_patch",
   "config": {
-    "tries": 14000,
-    "xz_spread": 16,
+    "tries": 1000,
+    "xz_spread": 9,
     "y_spread": 7,
     "feature": {
       "feature": "cave_enhancements:rose_quartz_pillar_floor",

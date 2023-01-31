@@ -1,8 +1,10 @@
 package com.teamabode.cave_enhancements;
 
 import com.teamabode.cave_enhancements.common.block.weathering.WeatheringBlock;
+import com.teamabode.cave_enhancements.common.entity.cruncher.Cruncher;
 import com.teamabode.cave_enhancements.core.platform.RegistryHelper;
 import com.teamabode.cave_enhancements.core.registry.*;
+import com.teamabode.cave_enhancements.core.registry.misc.ModCriteriaTriggers;
 import com.teamabode.cave_enhancements.core.registry.misc.ModDispenserBehavior;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -48,6 +50,7 @@ public class CaveEnhancements {
         PotionBrewing.addMix(Potions.AWKWARD, ModItems.ROSE_QUARTZ.get(), ModPotions.REVERSAL.get());
         PotionBrewing.addMix(ModPotions.REVERSAL.get(), Items.REDSTONE, ModPotions.LONG_REVERSAL.get());
 
+        ModCriteriaTriggers.init();
         ModDispenserBehavior.init();
     }
 

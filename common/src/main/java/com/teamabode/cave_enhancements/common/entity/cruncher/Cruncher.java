@@ -6,14 +6,17 @@ import com.teamabode.cave_enhancements.core.registry.ModItems;
 import com.teamabode.cave_enhancements.core.registry.ModSounds;
 import com.teamabode.cave_enhancements.core.registry.ModTags;
 import net.minecraft.MethodsReturnNonnullByDefault;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtUtils;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
@@ -33,11 +36,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.function.Predicate;
 
 @ParametersAreNonnullByDefault
@@ -49,6 +54,7 @@ public class Cruncher extends Animal {
     private static final EntityDataAccessor<Integer> SEARCH_COOLDOWN_TIME = SynchedEntityData.defineId(Cruncher.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> ORE_POS_Y = SynchedEntityData.defineId(Cruncher.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Optional<BlockPos>> TARGET_POS = SynchedEntityData.defineId(Cruncher.class, EntityDataSerializers.OPTIONAL_BLOCK_POS);
+    private static final EntityDataAccessor<Optional<UUID>> FEEDING_PLAYER = SynchedEntityData.defineId(Cruncher.class, EntityDataSerializers.OPTIONAL_UUID);
 
     public final AnimationState chompAnimationState = new AnimationState();
     public final AnimationState walkAnimationState = new AnimationState();
@@ -84,6 +90,7 @@ public class Cruncher extends Animal {
         this.entityData.define(SEARCH_COOLDOWN_TIME, 0);
         this.entityData.define(ORE_POS_Y, 0);
         this.entityData.define(TARGET_POS, Optional.empty());
+        this.entityData.define(FEEDING_PLAYER, Optional.empty());
     }
 
     public float getScale() {
@@ -123,6 +130,16 @@ public class Cruncher extends Animal {
         this.entityData.set(SHEARED, value);
     }
 
+    @Nullable
+    public Player getFeedingPlayer() {
+        var uuid = this.entityData.get(FEEDING_PLAYER);
+        return uuid.map(value -> this.level.getPlayerByUUID(value)).orElse(null);
+    }
+
+    public void setFeedingPlayer(@Nullable Player player) {
+        this.entityData.set(FEEDING_PLAYER, player == null ? Optional.empty() : Optional.of(player.getUUID()));
+    }
+
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
         compound.putInt("EatingState", getEatingState());
@@ -132,38 +149,50 @@ public class Cruncher extends Animal {
 
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
-        setEatingState(compound.getInt("EatingState"));
-        setSheared(compound.getBoolean("Sheared"));
-        setSearchCooldownTime(compound.getInt("SearchCooldownTime"));
+        this.setEatingState(compound.getInt("EatingState"));
+        this.setSheared(compound.getBoolean("Sheared"));
+        this.setSearchCooldownTime(compound.getInt("SearchCooldownTime"));
     }
 
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
-        if (player.getItemInHand(hand).is(Items.GLOW_BERRIES) && this.getMainHandItem().isEmpty() && this.getEatingState() == 0 && !this.isBaby()) {
-            if (this.getSearchCooldownTime() == 0) {
-                ItemStack itemStack = player.getItemInHand(hand);
-                this.setEatingState(1);
-                this.eatingEffects(itemStack);
-
-                if (!player.getAbilities().instabuild) {
-                    itemStack.shrink(1);
-                }
-                return InteractionResult.SUCCESS;
-            } else {
-                if (level instanceof ServerLevel server) {
-                    server.sendParticles(ParticleTypes.ANGRY_VILLAGER, this.getX(), this.getEyeY(), this.getZ(), 1, 0.0D,0.0D, 0.0D, 0.0F);
-                }
+        ItemStack itemStack = player.getItemInHand(hand);
+        if (!this.isBaby()) {
+            if (itemStack.is(Items.SHEARS) && !this.isSheared()) {
+                this.playSound(SoundEvents.SHEEP_SHEAR, 1.0F, 1.0F);
+                itemStack.hurtAndBreak(1, player, pPlayer -> pPlayer.broadcastBreakEvent(hand));
+                ItemEntity itemEntity = new ItemEntity(level, this.getX(), this.getY(), this.getZ(), new ItemStack(Items.MOSS_CARPET));
+                itemEntity.setDeltaMovement(0.0D, 0.4D, 0.0D);
+                level.addFreshEntity(itemEntity);
+                this.gameEvent(GameEvent.ENTITY_INTERACT, player);
                 return InteractionResult.SUCCESS;
             }
+            if (itemStack.is(Items.GLOW_BERRIES) && this.getEatingState() == 0) {
+                if (this.getSearchCooldownTime() > 0) {
+                    fail();
+                    return InteractionResult.PASS;
+                }
 
-        } else if (player.getItemInHand(hand).is(Items.SHEARS) && !this.isSheared() && !this.isBaby()) {
-            this.playSound(SoundEvents.SHEEP_SHEAR, 1.0F, 1.0F);
-            ItemEntity itemEntity = new ItemEntity(level, this.getX(), this.getY(), this.getZ(), new ItemStack(Items.MOSS_CARPET));
-            itemEntity.setDeltaMovement(0.0D, 0.4D, 0.0D);
-            level.addFreshEntity(itemEntity);
-            this.setSheared(true);
-            return InteractionResult.SUCCESS;
-        } else {
-            return super.mobInteract(player, hand);
+                this.setEatingState(1);
+                this.setFeedingPlayer(player);
+                this.eatingEffects(itemStack);
+                if (!player.getAbilities().instabuild) itemStack.shrink(1);
+                this.gameEvent(GameEvent.ENTITY_INTERACT, player);
+                return InteractionResult.SUCCESS;
+            }
+        }
+        fail();
+        return InteractionResult.PASS;
+    }
+
+    public void fail() {
+        if (level instanceof ServerLevel server) {
+            for (int i = 0; i < 7; i++) {
+                double gaussX = this.random.nextGaussian() * 0.02;
+                double gaussY = this.random.nextGaussian() * 0.02;
+                double gaussZ = this.random.nextGaussian() * 0.02;
+
+                server.sendParticles(ParticleTypes.SMOKE, this.getRandomX(1.0D), this.getRandomY() + 0.5, this.getRandomZ(1.0D), 1, gaussX, gaussY, gaussZ, 0.0F);
+            }
         }
     }
 
