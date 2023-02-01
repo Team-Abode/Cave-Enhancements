@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " r ",
+    "iti",
+    " i "
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:iron_nugget"
+    },
+    "t": {
+      "item": "endergetic:ender_torch"
+    },
+    "r": {
+      "item": "cave_enhancements:rose_quartz"
+    }
+  },
+  "result": {
+    "item": "cave_enhancements:ender_rose_quartz_lamp",
+    "count": 1
+  },
+  "conditions": [
+    {
+        "type": "forge:mod_loaded",
+        "modid": "endergetic"
+    }
+  ]
+}

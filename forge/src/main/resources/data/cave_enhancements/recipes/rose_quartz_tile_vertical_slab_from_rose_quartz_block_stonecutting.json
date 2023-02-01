@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "cave_enhancements:rose_quartz_block"
+  },
+  "result": "cave_enhancements:rose_quartz_tile_vertical_slab",
+  "count": 2,
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "vertical_slabs"
+    }
+  ]
+}
