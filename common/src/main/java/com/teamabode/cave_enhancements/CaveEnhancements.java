@@ -56,15 +56,13 @@ public class CaveEnhancements {
 
     public static void addPotionTooltip(ItemStack itemStack, TooltipFlag tooltipFlag, List<Component> componentList) {
         if (PotionUtils.getPotion(itemStack) == ModPotions.REVERSAL.get() || PotionUtils.getPotion(itemStack) == ModPotions.LONG_REVERSAL.get()) {
-            int i = 0;
-            for (Component component : componentList) {
-                if (!component.contains(Component.translatable("potion.whenDrank").withStyle(ChatFormatting.DARK_PURPLE)) && i < componentList.size()) {
-                    i++;
-                    continue;
+            for (int i = 0; i < componentList.size(); i++) {
+                Component component = componentList.get(i);
+                if (component.contains(Component.translatable("potion.whenDrank").withStyle(ChatFormatting.DARK_PURPLE))) {
+                    componentList.remove(i);
+                    break;
                 }
-                break;
             }
-            componentList.add(i+1, Component.translatable("gameplay.reversal").withStyle(ChatFormatting.BLUE));
         }
     }
 }
