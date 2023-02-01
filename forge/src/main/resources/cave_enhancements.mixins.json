@@ -1,5 +1,6 @@
 {
   "required": true,
+  "minVersion": "0.8",
   "package": "com.teamabode.cave_enhancements.core.forge.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
