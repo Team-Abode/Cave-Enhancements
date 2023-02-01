@@ -1,24 +1,18 @@
 modLoader = "javafml"
 loaderVersion = "[43,)"
 license = "All rights reserved"
+logoFile="icon.png"
 
 [[mods]]
 modId="cave_enhancements"
-version="${file.jarVersion}"
+version="${version}"
 displayURL="https://github.com/Team-Abode/Cave-Enhancements-Forge"
 displayName="Cave Enhancements"
-logoFile="caveenhancements.png"
-credits=""
-authors="KekeCreations, ExDrill"
-logoFile="icon.png"
 credits="Thanks to our other contributors; Chikorita Lover, Firch, BardinTheDwarf, & junshengxie."
 authors="Team Abode"
 description='''
 Expands upon the underground by adding in new exciting features!
-    Expands upon the underground by adding in new & exciting features!
 '''
-
-logoFile = "icon.png"
 
 [[dependencies.cave_enhancements]]
 modId = "forge"
