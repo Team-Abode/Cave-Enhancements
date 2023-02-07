@@ -53,16 +53,4 @@ public class CaveEnhancements {
         ModCriteriaTriggers.init();
         ModDispenserBehavior.init();
     }
-
-    public static void addPotionTooltip(ItemStack itemStack, TooltipFlag tooltipFlag, List<Component> componentList) {
-        if (PotionUtils.getPotion(itemStack) == ModPotions.REVERSAL.get() || PotionUtils.getPotion(itemStack) == ModPotions.LONG_REVERSAL.get()) {
-            for (int i = 0; i < componentList.size(); i++) {
-                Component component = componentList.get(i);
-                if (component.contains(Component.translatable("potion.whenDrank").withStyle(ChatFormatting.DARK_PURPLE))) {
-                    componentList.remove(i);
-                    break;
-                }
-            }
-        }
-    }
 }

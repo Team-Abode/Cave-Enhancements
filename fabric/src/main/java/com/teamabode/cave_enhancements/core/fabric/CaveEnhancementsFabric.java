@@ -8,7 +8,6 @@ import com.teamabode.cave_enhancements.core.registry.ModEntities;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -32,6 +31,5 @@ public class CaveEnhancementsFabric implements ModInitializer {
         BiomeModifications.addSpawn(BiomeSelectors.includeByKey(Biomes.LUSH_CAVES), MobCategory.MONSTER, ModEntities.CRUNCHER.get(), 10, 1, 1);
         BiomeModifications.addSpawn(BiomeSelectors.includeByKey(Biomes.DRIPSTONE_CAVES), MobCategory.MONSTER, ModEntities.DRIPSTONE_TORTOISE.get(), 50, 2, 3);
 
-        ItemTooltipCallback.EVENT.register(CaveEnhancements::addPotionTooltip);
     }
 }

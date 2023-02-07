@@ -16,7 +16,11 @@
   },
   "conditions": [
     {
-      "type": "blueprint:quark_flag",
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    },
+    {
+      "type": "quark:flag",
       "flag": "vertical_slabs"
     }
   ]
