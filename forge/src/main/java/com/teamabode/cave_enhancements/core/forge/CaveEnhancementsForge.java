@@ -1,6 +1,7 @@
 package com.teamabode.cave_enhancements.core.forge;
 
 import com.teamabode.cave_enhancements.CaveEnhancements;
+import com.teamabode.cave_enhancements.client.CaveEnhancementsClient;
 import com.teamabode.cave_enhancements.common.entity.cruncher.Cruncher;
 import com.teamabode.cave_enhancements.common.entity.dripstone_tortoise.DripstoneTortoise;
 import com.teamabode.cave_enhancements.common.entity.goop.Goop;
@@ -8,6 +9,7 @@ import com.teamabode.cave_enhancements.core.platform.forge.RegistryHelperImpl;
 import com.teamabode.cave_enhancements.core.registry.ModEntities;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -16,6 +18,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLLoader;
 
 @Mod(CaveEnhancements.MODID)
 public class CaveEnhancementsForge {
@@ -39,7 +42,11 @@ public class CaveEnhancementsForge {
 
         eventBus.addListener(this::commonSetup);
         eventBus.addListener(this::registerEntityAttributes);
-        MinecraftForge.EVENT_BUS.addListener(this::addTooltipEvent);
+
+        if (FMLLoader.getDist() == Dist.CLIENT) {
+            MinecraftForge.EVENT_BUS.addListener(this::addTooltipEvent);
+        }
+
 
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -60,6 +67,6 @@ public class CaveEnhancementsForge {
     }
 
     private void addTooltipEvent(ItemTooltipEvent event) {
-        CaveEnhancements.addPotionTooltip(event.getItemStack(), event.getFlags(), event.getToolTip());
+        CaveEnhancementsClient.addPotionTooltip(event.getItemStack(), event.getFlags(), event.getToolTip());
     }
 }

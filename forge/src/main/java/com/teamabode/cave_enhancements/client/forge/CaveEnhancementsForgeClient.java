@@ -46,6 +46,8 @@ public class CaveEnhancementsForgeClient {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WAXED_OXIDIZED_REDSTONE_RECEIVER.get(), RenderType.cutout());
     }
 
+
+
     @SubscribeEvent
     public static void registerEntityRenderers(final EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.GOOP.get(), GoopRenderer::new);

@@ -1,5 +1,6 @@
 package com.teamabode.cave_enhancements.client.fabric;
 
+import com.teamabode.cave_enhancements.client.CaveEnhancementsClient;
 import com.teamabode.cave_enhancements.client.model.CruncherModel;
 import com.teamabode.cave_enhancements.client.model.DripstonePikeModel;
 import com.teamabode.cave_enhancements.client.model.DripstoneTortoiseModel;
@@ -13,6 +14,7 @@ import com.teamabode.cave_enhancements.core.registry.ModEntities;
 import com.teamabode.cave_enhancements.core.registry.ModParticles;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
@@ -28,6 +30,8 @@ public class CaveEnhancementsFabricClient implements ClientModInitializer {
         registerBlockRenderLayers();
         registerRenderers();
         registerModelLayer();
+
+        ItemTooltipCallback.EVENT.register(CaveEnhancementsClient::addPotionTooltip);
     }
 
     public static void registerParticleFactories() {
