@@ -27,6 +27,9 @@ public class ModItems {
     public static final Supplier<SpawnEggItem> CRUNCHER_SPAWN_EGG = RegistryHelper.registerSpawnEgg("cruncher", ModEntities.CRUNCHER, 11127234, 5757312);
     public static final Supplier<SpawnEggItem> DRIPSTONE_TORTOISE_SPAWN_EGG = RegistryHelper.registerSpawnEgg("dripstone_tortoise", ModEntities.DRIPSTONE_TORTOISE, 8156236, 6967114);
 
+    public static final Supplier<Item> GOOP_PUDDING = RegistryHelper.registerItem("goop_pudding", () -> new BowlFoodItem(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(ModFoods.GOOP_PUDDING)));
+    public static final Supplier<Item> CHOCOLATE_PUDDING = RegistryHelper.registerItem("chocolate_pudding", () -> new ChocolatePuddingItem(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(ModFoods.CHOCOLATE_PUDDING)));
+
     public static void init() {
 
     }
