@@ -39,7 +39,7 @@ public class GlowBerryJuiceItem extends Item {
     }
 
     public int getUseDuration(ItemStack stack) {
-        return 40;
+        return 20;
     }
 
     public UseAnim getUseAnimation(ItemStack stack) {

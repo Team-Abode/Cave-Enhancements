@@ -228,6 +228,11 @@ public class Goop extends Monster {
         this.setDripCooldown(compoundTag.getInt("DripCooldown"));
     }
 
+    // Entity should not be able to despawn when spawned from a bucket.
+    public boolean requiresCustomPersistence() {
+        return super.requiresCustomPersistence() || this.isFromBucket();
+    }
+
     // Spawns a goop drip at the entity's position.
     private void drip(boolean isTrap) {
         this.setDripCooldown(TIME_UNTIL_DRIP.sample(this.random));
