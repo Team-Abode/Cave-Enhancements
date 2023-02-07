@@ -63,6 +63,8 @@ public class ModBlocks {
     public static final Supplier<Block> WAXED_WEATHERED_REDSTONE_RECEIVER = RegistryHelper.registerBlockWithItem("waxed_weathered_redstone_receiver", () -> new ReceiverBlock(WeatherState.WAXED_WEATHERED, BlockProperties.redstoneReceiver(false)), CreativeModeTab.TAB_REDSTONE);
     public static final Supplier<Block> WAXED_OXIDIZED_REDSTONE_RECEIVER = RegistryHelper.registerBlockWithItem("waxed_oxidized_redstone_receiver", () -> new ReceiverBlock(WeatherState.WAXED_OXIDIZED, BlockProperties.redstoneReceiver(false)), CreativeModeTab.TAB_REDSTONE);
 
+    public static final Supplier<Block> DEEPSLATE_PILLAR = RegistryHelper.registerBlockWithItem("deepslate_pillar", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_BRICKS).sound(SoundType.DEEPSLATE_TILES)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
     private static ToIntFunction<BlockState> litBlockEmission(int i) {
         return (blockState) -> blockState.getValue(BlockStateProperties.LIT) ? i : 0;
     }

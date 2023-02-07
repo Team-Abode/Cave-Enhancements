@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "cave_enhancements:block/deepslate_pillar_top",
+    "side": "cave_enhancements:block/deepslate_pillar"
+  }
+}

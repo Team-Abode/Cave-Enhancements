@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "cave_enhancements:block/deepslate_pillar_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "cave_enhancements:block/deepslate_pillar"
+    },
+    "axis=z": {
+      "model": "cave_enhancements:block/deepslate_pillar_horizontal",
+      "x": 90
+    }
+  }
+}
