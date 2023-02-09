@@ -29,16 +29,31 @@ public class ReceiverBlockEntity extends BlockEntity {
         level.setBlockAndUpdate(pos, state.setValue(ReceiverBlock.CAN_PASS, timePoweredTicks == requiredPowerDurationTicks));
     }
 
-    protected void saveAdditional(CompoundTag nbt) {
-        nbt.putInt("PoweredTicks", this.timePoweredTicks);
-        nbt.putInt("OutputSignal", this.output);
+    private int getPoweredTicks() {
+        return timePoweredTicks;
+    }
+
+    private void setPoweredTicks(int value) {
+        timePoweredTicks = value;
         this.setChanged();
-        super.saveAdditional(nbt);
+    }
+
+    private int getOutputSignal() {
+        return output;
+    }
+
+    private void setOutputSignal(int value) {
+        output = value;
+        this.setChanged();
+    }
+
+    protected void saveAdditional(CompoundTag nbt) {
+        nbt.putInt("PoweredTicks", this.getPoweredTicks());
+        nbt.putInt("OutputSignal", this.getOutputSignal());
     }
 
     public void load(CompoundTag nbt) {
-        timePoweredTicks = nbt.getInt("PoweredTicks");
-        output = nbt.getInt("OutputSignal");
-        super.load(nbt);
+        this.setPoweredTicks(nbt.getInt("PoweredTicks"));
+        this.setOutputSignal(nbt.getInt("OutputSignal"));
     }
 }
