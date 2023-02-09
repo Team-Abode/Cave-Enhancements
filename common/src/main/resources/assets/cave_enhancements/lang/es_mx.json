@@ -85,23 +85,35 @@
     "block.minecraft.banner.cave_enhancements.goop.magenta": "Estampado magenta de salpicadura de tinte",
     "block.minecraft.banner.cave_enhancements.goop.orange": "Estampado naranja de salpicadura de tinte",
     "block.minecraft.banner.cave_enhancements.goop.white": "Estampado blanco de salpicadura de tinte",
+    "advancements.story.below_zero.title": "Below Zero",
+    "advancements.story.below_zero.description": "Spelunk through the Deepslate layer",
 
-    "advancements.underground.root.title": "El subterráneo",
-    "advancements.underground.root.description": "Cuanto más profundo eres, más puedes encontrar",
+    "advancements.adventure.down_you_go.title": "¡Abajo vas!",
+    "advancements.adventure.down_you_go.description": "Lanza una bola de nieve a un Goop para colapsarlo",
+
+    "advancements.adventure.getting_gooey.title": "Poniéndose pegajoso",
+    "advancements.adventure.getting_gooey.description": "Encuéntrate atrapado en una trampa de goop",
+
+    "advancements.adventure.vile_hazard.title": "Peligro vil",
+    "advancements.adventure.vile_hazard.description": "Haz que una rana consume un Goop para obtener Goop volatíl",
+
     "advancements.adventure.find_mountain_shrine.title": "El tesoro de la montaña",
-    "advancements.adventure.find_mountain_shrine.description": "Explora el santuario de la montaña",
-    "advancements.underground.spyglass_at_goop.title": "¡Hacia arriba!",
-    "advancements.underground.spyglass_at_goop.description": "Mira a un goop a través de un catalejo",
-    "advancements.underground.stuck_in_goop_trap.title": "Demasiado profundo",
-    "advancements.underground.stuck_in_goop_trap.description": "Encuéntrate atrapado en una trampa de goop",
-    "advancements.underground.place_glow_paste.title": "¡Un verdadero resplandor!",
-    "advancements.underground.place_glow_paste.description": "Ilumina un camino con pasta brillante",
-    "advancements.underground.collect_rose_quartz.title": "Paz y tranquilidad",
-    "advancements.underground.collect_rose_quartz.description": "Recolectar las materials encontradas en una cueva de cuarzo rosa",
-    "advancements.underground.cave_explorer.title": "El minero digno",
-    "advancements.underground.cave_explorer.description": "Explora todas las biomas de las cuevas",
-    "advancements.underground.below_zero.title": "Bajo cero",
-    "advancements.underground.below_zero.description": "Entra en la profunda capa de pizarra",
+    "advancements.adventure.find_mountain_shrine.description": "Encuentre el santuario de la montaña",
+
+    "advancements.adventure.spelunker_voyage.title": "Un largo viajo de las cuevas",
+    "advancements.adventure.spelunker_voyage.description": "Descubre todos las biomas dentro las cuevas",
+
+    "advancements.husbandry.light_up_the_path.title": "Alumbre el camino",
+    "advancements.husbandry.light_up_the_path.description": "Alumbre el camino usando pasta brillante",
+
+    "advancements.husbandry.tag_team_miners.title": "Mineros dúo",
+    "advancements.husbandry.tag_team_miners.description": "Have a Cruncher lead you to treasure",
+
+    "advancements.husbandry.whos_a_good_cruncher.title": "Who's a Good Cruncher?",
+    "advancements.husbandry.whos_a_good_cruncher.description": "Haz que un cruncher te guíe a diamantes",
+
+    "advancements.husbandry.time_to_chime.title": "Tiempo de los campanadas",
+    "advancements.husbandry.time_to_chime.description": "Obtenga los campanadas de cuarzo rosa",
 
     "subtitles.item.goop.throw": "Goop lanzada",
     "subtitles.item.amethyst_flute.use": "Flauta sonando",
