@@ -22,13 +22,19 @@ public class CaveEnhancementsFabric implements ModInitializer {
 
         FabricDefaultAttributeRegistry.register(ModEntities.GOOP.get(), Goop.createGoopAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.CRUNCHER.get(), Cruncher.createCruncherAttributes());
-        FabricDefaultAttributeRegistry.register(ModEntities.DRIPSTONE_TORTOISE.get(), DripstoneTortoise.createDripstoneTortoiseAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.DRIPSTONE_TORTOISE.get(),
+                DripstoneTortoise.createDripstoneTortoiseAttributes());
 
-        SpawnPlacements.register(ModEntities.GOOP.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING, Goop::checkGoopSpawnRules);
-        SpawnPlacements.register(ModEntities.CRUNCHER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING, Cruncher::checkCruncherSpawnRules);
-        SpawnPlacements.register(ModEntities.DRIPSTONE_TORTOISE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING, DripstoneTortoise::checkDripstoneTortoiseSpawnRules);
+        SpawnPlacements.register(ModEntities.GOOP.get(), SpawnPlacements.Type.NO_RESTRICTIONS,
+                Heightmap.Types.MOTION_BLOCKING, Goop::checkGoopSpawnRules);
+        SpawnPlacements.register(ModEntities.CRUNCHER.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING, Cruncher::checkCruncherSpawnRules);
+        SpawnPlacements.register(ModEntities.DRIPSTONE_TORTOISE.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING, DripstoneTortoise::checkDripstoneTortoiseSpawnRules);
 
-        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(Biomes.LUSH_CAVES), MobCategory.MONSTER, ModEntities.CRUNCHER.get(), 10, 1, 1);
-        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(Biomes.DRIPSTONE_CAVES), MobCategory.MONSTER, ModEntities.DRIPSTONE_TORTOISE.get(), 50, 2, 3);
+        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(Biomes.LUSH_CAVES), MobCategory.MONSTER,
+                ModEntities.CRUNCHER.get(), 10, 1, 1);
+        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(Biomes.DRIPSTONE_CAVES), MobCategory.MONSTER,
+                ModEntities.DRIPSTONE_TORTOISE.get(), 50, 2, 3);
     }
 }

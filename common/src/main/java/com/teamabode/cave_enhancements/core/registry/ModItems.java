@@ -1,11 +1,13 @@
 package com.teamabode.cave_enhancements.core.registry;
 
 import com.teamabode.cave_enhancements.common.item.*;
-import com.teamabode.cave_enhancements.core.integration.farmersdelight.ChocolatePuddingItem;
 import com.teamabode.cave_enhancements.core.platform.RegistryHelper;
 import com.teamabode.cave_enhancements.core.registry.misc.ItemProperties;
 import com.teamabode.cave_enhancements.core.registry.misc.ModFoods;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.BannerPatternItem;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SpawnEggItem;
 
 import java.util.function.Supplier;
 
