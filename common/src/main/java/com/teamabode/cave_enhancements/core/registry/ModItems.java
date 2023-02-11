@@ -1,13 +1,12 @@
 package com.teamabode.cave_enhancements.core.registry;
 
 import com.teamabode.cave_enhancements.common.item.*;
+import com.teamabode.cave_enhancements.core.integration.farmersdelight.ChocolatePuddingItem;
+import com.teamabode.cave_enhancements.core.integration.farmersdelight.FDTab;
 import com.teamabode.cave_enhancements.core.platform.RegistryHelper;
 import com.teamabode.cave_enhancements.core.registry.misc.ItemProperties;
 import com.teamabode.cave_enhancements.core.registry.misc.ModFoods;
-import net.minecraft.world.item.BannerPatternItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SpawnEggItem;
+import net.minecraft.world.item.*;
 
 import java.util.function.Supplier;
 
@@ -29,8 +28,8 @@ public class ModItems {
     public static final Supplier<SpawnEggItem> CRUNCHER_SPAWN_EGG = RegistryHelper.registerSpawnEgg("cruncher", ModEntities.CRUNCHER, 11127234, 5757312);
     public static final Supplier<SpawnEggItem> DRIPSTONE_TORTOISE_SPAWN_EGG = RegistryHelper.registerSpawnEgg("dripstone_tortoise", ModEntities.DRIPSTONE_TORTOISE, 8156236, 6967114);
 
-    public static final Supplier<Item> GOOP_PUDDING = RegistryHelper.registerItem("goop_pudding", () -> new BowlFoodItem(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(ModFoods.GOOP_PUDDING)));
-    public static final Supplier<Item> CHOCOLATE_PUDDING = RegistryHelper.registerItem("chocolate_pudding", () -> new ChocolatePuddingItem(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(ModFoods.CHOCOLATE_PUDDING)));
+    public static final Supplier<Item> GOOP_PUDDING = RegistryHelper.registerItem("goop_pudding", () -> new BowlFoodItem(new Item.Properties().tab(FDTab.getFDTab()).food(ModFoods.GOOP_PUDDING)));
+    public static final Supplier<Item> CHOCOLATE_PUDDING = RegistryHelper.registerItem("chocolate_pudding", () -> new ChocolatePuddingItem(new Item.Properties().tab(FDTab.getFDTab()).food(ModFoods.CHOCOLATE_PUDDING)));
 
     public static void init() {
 

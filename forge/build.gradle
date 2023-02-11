@@ -29,8 +29,8 @@ configurations {
 
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
-    // Remove the next line if you don't want to depend on the API
-    //modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
+
+    modImplementation("curse.maven:farmersdelight-398521:3999157")
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }

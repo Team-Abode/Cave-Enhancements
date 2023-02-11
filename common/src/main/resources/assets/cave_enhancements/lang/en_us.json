@@ -11,6 +11,9 @@
     "item.cave_enhancements.dripstone_tortoise_spawn_egg": "Dripstone Tortoise Spawn Egg",
     "item.cave_enhancements.cruncher_spawn_egg": "Cruncher Spawn Egg",
 
+    "item.cave_enhancements.goop_pudding": "Goop Pudding",
+    "item.cave_enhancements.chocolate_pudding": "Chocolate Pudding",
+
     "block.cave_enhancements.goop_block": "Goop Block",
     "block.cave_enhancements.goop_splat": "Goop Splat",
     "block.cave_enhancements.dripping_goop": "Dripping Goop",
@@ -46,6 +49,7 @@
     "block.cave_enhancements.rose_quartz_lamp": "Rose Quartz Lamp",
     "block.cave_enhancements.soul_rose_quartz_lamp": "Soul Rose Quartz Lamp",
     "block.cave_enhancements.ender_rose_quartz_lamp": "Ender Rose Quartz Lamp",
+    "block.cave_enhancements.deepslate_pillar": "Deepslate Pillar",
 
     "entity.cave_enhancements.goop": "Goop",
     "entity.cave_enhancements.dripstone_tortoise": "Dripstone Tortoise",

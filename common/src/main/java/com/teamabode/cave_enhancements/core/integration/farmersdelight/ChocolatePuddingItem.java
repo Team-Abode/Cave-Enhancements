@@ -1,5 +1,6 @@
 package com.teamabode.cave_enhancements.core.integration.farmersdelight;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -49,7 +50,7 @@ public class ChocolatePuddingItem extends Item {
     }
 
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
-        MutableComponent textEmpty = Component.empty();
-
+        Component textComponent = Component.translatable("farmersdelight.tooltip.hot_cocoa").withStyle(ChatFormatting.BLUE);
+        list.add(textComponent);
     }
 }
