@@ -15,8 +15,10 @@
     "block.cave_enhancements.goop_splat": "Слякоть",
     "block.cave_enhancements.dripping_goop": "Стекающая слякоть",
     "block.cave_enhancements.goop_trap": "Слякотная ловушка",
-    "block.cave_enhancements.volatile_goop": "Текучая слякоть",
+    "block.cave_enhancements.volatile_goop": "Нестабильная слякоть",
+	"block.cave_enhancements.glow_splotch": "Glow Splotch",
     "block.cave_enhancements.spectacle_candle": "Свеча зримости",
+	"block.cave_enhancements.spectacle_candle_cake": "Торт со свечой зримости",
     "block.cave_enhancements.dripstone_tortoise_egg": "Яйцо натёчной черепахи",
     "block.cave_enhancements.lightning_anchor": "Громовой якорь",
     "block.cave_enhancements.charged_lightning_anchor": "Заряженный громовой якорь",
@@ -43,7 +45,7 @@
     "block.cave_enhancements.rose_quartz_chimes": "Колокольчики из розового кварца",
     "block.cave_enhancements.rose_quartz_lamp": "Фонарь из розового кварца",
     "block.cave_enhancements.soul_rose_quartz_lamp": "Фонарь душ из розового кварца",
-    "block.cave_enhancements.ender_rose_quartz_lamp": "Ender Rose Quartz Lamp",
+    "block.cave_enhancements.ender_rose_quartz_lamp": "Фонарь Энда из розового кварца",
 	
     "entity.cave_enhancements.goop": "Слякоть",
     "entity.cave_enhancements.dripstone_tortoise": "Натёчная черепаха",
@@ -56,7 +58,7 @@
     "effect.cave_enhancements.reversal": "Отражение",
     "effect.cave_enhancements.sticky": "Липкий",
 	
-    "effect.cave_enhancements.reversal.description": "Накапливает полученный урон, добавляя к последующей атаке.",
+    "effect.cave_enhancements.reversal.description": "Накапливает полученный урон, добавляя его к последующей атаке.",
     "effect.cave_enhancements.sticky.description": "Понижает скорость перемещения и атаки.",
 	
     "biome.cave_enhancements.goop_caves": "Слякотные пещеры",
@@ -89,30 +91,43 @@
     "block.minecraft.banner.cave_enhancements.goop.orange": "Оранжевая клякса",
     "block.minecraft.banner.cave_enhancements.goop.white": "Белая клякса",
 	
-    "advancements.underground.root.title": "Подземелье",
-    "advancements.underground.root.description": "Ниже спускаешься, больше находишь",
+    "advancements.story.below_zero.title": "Ниже нуля",
+    "advancements.story.below_zero.description": "Доройтесь до слоя глубинного сланца",
+	
+	"advancements.adventure.down_you_go.title": "Упадок!",
+    "advancements.adventure.down_you_go.description": "Метните снежок в слякоть, чтобы обрушить её вниз",
+	
+	"advancements.adventure.getting_gooey.title": "Влипнуть",
+    "advancements.adventure.getting_gooey.description": "Застряньте в слякотной ловушке",
+	
+	"advancements.adventure.vile_hazard.title": "Угроза бедствия",
+    "advancements.adventure.vile_hazard.description": "Заставьте лягушку проглотить слякоть для получения нестабильной слякоти",
+
     "advancements.adventure.find_mountain_shrine.title": "Сокровище вершин",
     "advancements.adventure.find_mountain_shrine.description": "Найдите святилище в горах",
-    "advancements.underground.spyglass_at_goop.title": "Голову берегите!",
-    "advancements.underground.spyglass_at_goop.description": "Взгляните на слякоть через подзорную трубу",
-    "advancements.underground.stuck_in_goop_trap.title": "Встрял",
-    "advancements.underground.stuck_in_goop_trap.description": "Застрять в слякотной ловушке",
-    "advancements.underground.place_glow_paste.title": "Сиять по новому!",
-    "advancements.underground.place_glow_paste.description": "Осветите всё вокруг светящейся пастой",
-    "advancements.underground.collect_rose_quartz.title": "Подводные камни",
-    "advancements.underground.collect_rose_quartz.description": "Добудьте розовый кварц",
-    "advancements.underground.cave_explorer.title": "Пещеровед!",
-    "advancements.underground.cave_explorer.description": "Найдите все пещерные биомы",
-    "advancements.underground.below_zero.title": "Ниже нуля",
-    "advancements.underground.below_zero.description": "Доройтесь до слоя глубинного сланца",
+
+    "advancements.adventure.spelunker_voyage.title": "Пещеровед",
+    "advancements.adventure.spelunker_voyage.description": "Найдите все пещерные биомы",
+
+    "advancements.husbandry.light_up_the_path.title": "Осветить путь",
+    "advancements.husbandry.light_up_the_path.description": "Осветить путь при помощи светящейся пасты",
+
+    "advancements.husbandry.tag_team_miners.title": "Хрусteam",
+    "advancements.husbandry.tag_team_miners.description": "Позволить хрусту привести вас к сокровищам",
+
+    "advancements.husbandry.whos_a_good_cruncher.title": "Кто хороший хруст?",
+    "advancements.husbandry.whos_a_good_cruncher.description": "Позволить хрусту привести вас к алмазной руде",
+
+    "advancements.husbandry.time_to_chime.title": "Этот звон, этот звон...",
+    "advancements.husbandry.time_to_chime.description": "Создайте колокольчики из розового кварца",
 	
     "subtitles.item.goop.throw": "Слякоть летит",
     "subtitles.item.amethyst_flute.use": "Аметистовая флейта звучит",
     "subtitles.item.bucket.fill_goop": "Слякоть разливается",
     "subtitles.block.goop_block.slide": "Скольжение по блоку",
+    "subtitles.block.rose_quartz_chimes.chime": "Блок звенит",
     "subtitles.entity.goop.hurt": "Слякоть ранена",
     "subtitles.entity.goop.death": "Слякоть погибает",
-    "subtitles.item.bucket.fill_goop": "Слякоть льётся",
     "subtitles.entity.dripstone_tortoise.hurt": "Натёчная черепаха ранена",
     "subtitles.entity.dripstone_tortoise.death": "Натёчная черепаха погибает",
     "subtitles.entity.dripstone_tortoise.step": "Натёчная черепаха топает",
@@ -131,5 +146,7 @@
     "death.attack.viscous": "%1$s застрял в земле слишком сильно",
     "death.attack.viscous.player": "%1$s был приклеен, пока сражался с %2$s",
     "death.attack.goop_drip": "%1$s был затянут в слякоть",
-    "death.attack.goop_drip.player": "%1$s был захвачен слякотью, пока сражался с %2$s"
+    "death.attack.goop_drip.player": "%1$s был захвачен слякотью, пока сражался с %2$s",
+	
+	"gameplay.reversal": "Возвращает урон обратно"
 }
