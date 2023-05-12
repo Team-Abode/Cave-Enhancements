@@ -3,7 +3,9 @@ package com.teamabode.cave_enhancements.common.entity.cruncher.goals;
 import com.mojang.datafixers.util.Pair;
 import com.teamabode.cave_enhancements.common.entity.cruncher.Cruncher;
 import com.teamabode.cave_enhancements.core.registry.ModTags;
+import com.teamabode.cave_enhancements.core.registry.misc.ModCriteriaTriggers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.level.Level;
@@ -20,6 +22,7 @@ public class CruncherOreSearchGoal extends Goal {
     boolean reachedPosition = false;
     int goalTickTime = 0;
     @Nullable BlockPos targetPos = null;
+    @Nullable BlockPos treasurePos = null;
 
     public CruncherOreSearchGoal(Cruncher cruncher) {
         this.cruncher = cruncher;
@@ -59,6 +62,10 @@ public class CruncherOreSearchGoal extends Goal {
             cruncher.teleportToWithTicket(targetPos.getX() + 0.5D, targetPos.getY(), targetPos.getZ() + 0.5D);
             cruncher.setEatingState(2);
             cruncher.setTargetPos(targetPos);
+
+            if (cruncher.getFeedingPlayer() instanceof ServerPlayer serverPlayer && treasurePos != null) {
+                ModCriteriaTriggers.CRUNCHER_FOUND_BLOCK_TRIGGER.trigger(serverPlayer, treasurePos);
+            }
         } else {
             cruncher.particleResponse(false);
             cruncher.setEatingState(0);
@@ -91,6 +98,7 @@ public class CruncherOreSearchGoal extends Goal {
                 if (!level.getBlockState(pos.below()).is(ModTags.CRUNCHER_CONSUMABLES)) continue;
 
                 if (level.getBlockState(pos).is(ModTags.CRUNCHER_SEARCHABLES)) {
+                    treasurePos = pos;
                     potentialPositions.add(Pair.of(potentialPos, pos.getY()));
                     break;
                 }

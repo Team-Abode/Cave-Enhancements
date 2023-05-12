@@ -260,6 +260,10 @@ public class DripstoneTortoise extends Animal implements NeutralMob {
         }
     }
 
+    public boolean removeWhenFarAway(double d) {
+        return true;
+    }
+
     @Nullable
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
         return ModEntities.DRIPSTONE_TORTOISE.get().create(level);

@@ -25,12 +25,7 @@ public class CruncherEatBlockGoal extends Goal {
 
     public boolean canContinueToUse() {
         if (cruncher.getTargetPos() == null) return false;
-        if (cruncher.getBlockY() == cruncher.getOrePosY() + 1) {
-            if (cruncher.getFeedingPlayer() instanceof ServerPlayer serverPlayer) {
-                ModCriteriaTriggers.CRUNCHER_FOUND_BLOCK_TRIGGER.trigger(serverPlayer, cruncher.blockPosition().below());
-            }
-            return false;
-        }
+        if (cruncher.getBlockY() == cruncher.getOrePosY() + 1) return false;
         if (!cruncher.level.getBlockState(cruncher.blockPosition().below()).is(ModTags.CRUNCHER_CONSUMABLES)) return false;
         if (cruncher.level.getBlockState(cruncher.blockPosition().below()).is(ModTags.CRUNCHER_SEARCHABLES)) return false;
         if (cruncher.getLastHurtByMob() == null) return true;
